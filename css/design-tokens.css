@@ -1,10 +1,10 @@
 
 :root {
   /* Colors - Editorial Luxury */
-  --bg-primary: #FDFCF0;
-  --bg-secondary: #F4F1E1;
-  --text-primary: #1C201E;
-  --text-secondary: #4A4D4A;
+  --bg-primary: #0D0D0D;
+  --bg-secondary: #1A1A1A;
+  --text-primary: #F5F0E8;
+  --text-secondary: rgba(245,240,232,0.6);
   
   --accent-gold: #A88E6D;
   --accent-gold-hover: #8C7355;
@@ -13,8 +13,8 @@
   --border-subtle: #E6E1D6;
   
   /* Typography */
-  --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-sans: "DM Sans", "Inter", sans-serif;
   
   /* Layout */
   --section-padding: 8rem;

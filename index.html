@@ -63,7 +63,7 @@
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
 </head>
-<body class="bg-brand-bg text-brand-text font-sans overflow-x-hidden flex flex-col lg:flex-row w-full max-w-[100vw]">
+<body class="bg-[#0D0D0D] text-[#F5F0E8] font-sans overflow-x-hidden flex flex-col lg:flex-row w-full max-w-[100vw]">
 
   <!-- Premium Preloader -->
   <div id="premium-preloader" class="fixed inset-0 z-[9999] bg-slate-950 flex items-center justify-center transition-transform duration-1000">
@@ -118,7 +118,7 @@
 </aside>
 
   <!-- Main Content Area -->
-  <main class="w-full lg:ml-64 lg:w-[calc(100%-16rem)] mt-[77px] lg:mt-0 bg-[#F5F0E8]">
+  <main class="w-full lg:ml-64 lg:w-[calc(100%-16rem)] mt-[77px] lg:mt-0 bg-[#0D0D0D]">
 
      <!-- 1. HERO (Editorial Asimétrico) -->
      <section id="hero" class="relative w-full h-screen bg-[#0D0D0D] flex items-end justify-start overflow-hidden">
@@ -358,7 +358,7 @@
      <section id="tour360" class="w-full py-24 lg:py-32 px-8 lg:px-24 bg-white flex flex-col lg:flex-row items-center gap-16 lg:gap-24 fade-up-slow">
         <!-- 360 iframe (Left) -->
         <div class="w-full lg:w-1/2 relative">
-           <div class="w-full aspect-[4/3] bg-brand-bg relative overflow-hidden rounded-sm shadow-2xl border border-brand-border/20">
+           <div class="w-full aspect-[4/3] bg-[#1A1A1A] relative overflow-hidden rounded-sm shadow-2xl border border-brand-border/20">
                <iframe id="tourIframe" src="https://casas.virtualprop360.uy/tours/avNLpjngi?sceneId=k2sntmWaUa7" class="absolute inset-0 w-full h-full border-0"></iframe>
            </div>
         </div>
@@ -383,8 +383,8 @@
      </section>
 
      <!-- 5. GALERIA (Con filtros) -->
-     <section id="galeria" class="w-full py-24 px-8 lg:px-16 bg-white fade-up-slow">
-        <h3 class="font-serif text-4xl text-center mb-10 text-brand-text">Galería Visual</h3>
+     <section id="galeria" class="w-full py-24 px-8 lg:px-16 bg-[#111111] fade-up-slow">
+        <h3 class="font-serif text-4xl text-center mb-10 text-[#F5F0E8]">Galería Visual</h3>
         <div class="flex flex-wrap items-center justify-center gap-6 mb-12" id="galleryFilters">
           <button data-filter="all" class="filter-btn text-[9px] uppercase tracking-[0.3em] font-bold border-b border-brand-text text-brand-text pb-1 transition-all active">Todo</button>
           <button data-filter="bodas" class="filter-btn text-[9px] uppercase tracking-[0.3em] text-brand-text/50 hover:text-brand-text pb-1 transition-all">Bodas</button>
@@ -409,10 +409,10 @@
      </section>
 
      <!-- 7. CONTACTO / COTIZADOR -->
-     <section id="cotizador" class="w-full py-24 lg:py-32 px-8 lg:px-24 bg-brand-bg flex flex-col lg:flex-row gap-16 items-start fade-up-slow">
-         <div class="w-full lg:w-1/3 text-center lg:text-left">
-            <h3 class="font-serif text-4xl mb-6 text-brand-text">Contáctanos</h3>
-            <p class="text-sm font-light text-brand-text/60 mb-10">Agenda tu visita presencial o solicita tu presupuesto detallado online.</p>
+     <section id="cotizador" class="w-full py-24 lg:py-32 px-8 lg:px-24 bg-[#0D0D0D] flex flex-col lg:flex-row gap-16 items-start fade-up-slow">
+         <div class="w-full lg:w-1/3 text-center lg:text-left text-[#F5F0E8]">
+            <h3 class="font-serif text-4xl mb-6 text-[#F5F0E8]">Contáctanos</h3>
+            <p class="text-sm font-light text-[#F5F0E8]/50 mb-10">Agenda tu visita presencial o solicita tu presupuesto detallado online.</p>
             
             <div class="space-y-6 text-[10px] uppercase tracking-[0.2em] text-brand-text font-bold">
                <a href="https://wa.me/59892504871" target="_blank" class="block gretna-hover flex items-center justify-center lg:justify-start gap-4">
@@ -434,17 +434,17 @@
             </div>
          </div>
          
-         <div class="w-full lg:w-2/3 bg-white p-8 lg:p-12 shadow-sm border border-brand-border/30 rounded-sm relative">
+         <div class="w-full lg:w-2/3 bg-[#1A1A1A] p-8 lg:p-12 shadow-sm border border-white/10 rounded-sm relative">
             <div class="absolute top-0 right-0 w-32 h-32 bg-brand-bg rounded-bl-full -z-10 opacity-50"></div>
             <form id="quoteForm" onsubmit="QuoteCalculator.handleFormSubmit(event)" class="space-y-8 relative z-10">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-brand-text/50 font-bold">Nombre completo</label>
-                  <input type="text" id="calcName" aria-label="Nombre completo" class="w-full border-b border-brand-text/20 bg-transparent py-2 text-sm outline-none focus:border-brand-text transition-colors" required>
+                  <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-[#F5F0E8]/40 font-bold">Nombre completo</label>
+                  <input type="text" id="calcName" aria-label="Nombre completo" class="w-full border-b border-white/20 bg-transparent py-2 text-sm text-[#F5F0E8] outline-none focus:border-[#C9A96E] transition-colors" required>
                 </div>
                 <div>
-                  <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-brand-text/50 font-bold">Tipo de Evento</label>
-                  <select id="calcType" aria-label="Tipo de Evento" class="w-full border-b border-brand-text/20 bg-transparent py-2 text-sm outline-none focus:border-brand-text transition-colors appearance-none">
+                  <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-[#F5F0E8]/40 font-bold">Tipo de Evento</label>
+                  <select id="calcType" aria-label="Tipo de Evento" class="w-full border-b border-white/20 bg-transparent py-2 text-sm text-[#F5F0E8] outline-none focus:border-[#C9A96E] transition-colors appearance-none">
                     <option value="Boda">Boda / Casamiento</option>
                     <option value="15 Años">15 Años</option>
                     <option value="Fiesta Infantil / Granja">Fiesta Infantil / Granja</option>
@@ -455,22 +455,22 @@
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-brand-text/50 font-bold">Invitados (aprox)</label>
-                  <input type="number" id="calcGuests" aria-label="Invitados estimados" class="w-full border-b border-brand-text/20 bg-transparent py-2 text-sm outline-none focus:border-brand-text transition-colors" min="30" max="300" required>
+                  <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-[#F5F0E8]/40 font-bold">Invitados (aprox)</label>
+                  <input type="number" id="calcGuests" aria-label="Invitados estimados" class="w-full border-b border-white/20 bg-transparent py-2 text-sm text-[#F5F0E8] outline-none focus:border-[#C9A96E] transition-colors" min="30" max="300" required>
                 </div>
                 <div>
-                  <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-brand-text/50 font-bold">Fecha estimada</label>
-                  <input type="month" id="calcDate" aria-label="Fecha estimada" class="w-full border-b border-brand-text/20 bg-transparent py-2 text-sm outline-none focus:border-brand-text transition-colors" required>
+                  <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-[#F5F0E8]/40 font-bold">Fecha estimada</label>
+                  <input type="month" id="calcDate" aria-label="Fecha estimada" class="w-full border-b border-white/20 bg-transparent py-2 text-sm text-[#F5F0E8] outline-none focus:border-[#C9A96E] transition-colors" required>
                 </div>
               </div>
 
               <div>
-                <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-brand-text/50 font-bold">Comentarios</label>
-                <textarea id="calcDetails" aria-label="Comentarios adicionales" class="w-full border-b border-brand-text/20 bg-transparent py-2 text-sm outline-none focus:border-brand-text transition-colors h-16 resize-none"></textarea>
+                <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-[#F5F0E8]/40 font-bold">Comentarios</label>
+                <textarea id="calcDetails" aria-label="Comentarios adicionales" class="w-full border-b border-white/20 bg-transparent py-2 text-sm text-[#F5F0E8] outline-none focus:border-[#C9A96E] transition-colors h-16 resize-none"></textarea>
               </div>
 
               <div class="pt-4 text-center lg:text-left">
-                <button type="submit" class="bg-brand-text text-white font-bold px-10 py-5 text-[9px] uppercase tracking-[0.25em] hover:bg-[#8C6A5D] transition-colors rounded-sm shadow-xl">
+                <button type="submit" class="bg-[#C9A96E] text-[#0D0D0D] font-bold px-10 py-5 text-[9px] uppercase tracking-[0.25em] hover:bg-[#F5F0E8] transition-colors rounded-sm shadow-xl">
                   Enviar Consulta
                 </button>
               </div>
@@ -479,7 +479,7 @@
      </section>
      
      <!-- FOOTER -->
-     <footer class="w-full bg-slate-950 py-16 px-8 flex flex-col items-center justify-center text-center border-t-4 border-brand-accent">
+     <footer class="w-full bg-[#080808] py-16 px-8 flex flex-col items-center justify-center text-center border-t-4 border-brand-accent">
         <h4 class="font-serif text-3xl text-white mb-6">Chacra Don Andrés</h4>
         <p class="text-[9px] uppercase tracking-[0.2em] text-white/40 mb-2">Camino Monte Sosa 6610, Las Piedras</p>
         <p class="text-[9px] uppercase tracking-[0.2em] text-white/40 mb-10">&copy; 2026 Todos los derechos reservados.</p>
