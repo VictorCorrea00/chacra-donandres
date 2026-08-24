@@ -59,15 +59,8 @@ h1, h2, h3, .font-serif {
 }
 
 /* Animations */
-.fade-up-slow {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.fade-up-slow.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.fade-up-slow { /* managed by gsap */ }
+
 
 /* Navbar */
 .nav-scrolled {
@@ -105,7 +98,7 @@ h1, h2, h3, .font-serif {
 
 @keyframes kenBurns {
   0% { transform: scale(1.1) translate(0, 0); }
-  100% { transform: scale(1) translate(-1%, -1%); }
+  100% { transform: scale(1.05) translate(-1%, -1%); }
 }
 
 .animate-slide-up {
