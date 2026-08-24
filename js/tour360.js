@@ -18,7 +18,7 @@ const TourController = {
     container.innerHTML = ChacraData.tourScenes.map(scene => `
       <button 
         onclick="TourController.switchScene('${scene.id}', this)"
-        class="scene-btn ${scene.id === this.currentSceneId ? \'text-brand-text border-brand-text bg-brand-secondary\' : \'text-brand-text/50 border-brand-border hover:text-brand-text hover:border-brand-text\'} px-4 py-3 text-[10px] uppercase tracking-[0.15em] border transition-all flex flex-col md:flex-row items-center gap-2 min-w-max text-left"
+        class="scene-btn ${scene.id === this.currentSceneId ? 'text-brand-text border-brand-text bg-brand-secondary' : 'text-brand-text/50 border-brand-border hover:text-brand-text hover:border-brand-text'} px-4 py-3 text-[10px] uppercase tracking-[0.15em] border transition-all flex flex-col md:flex-row items-center gap-2 min-w-max text-left"
         title="${scene.desc}">
         
         <span>${scene.name}</span>
@@ -32,15 +32,7 @@ const TourController = {
       this.iframeElement.src = `${ChacraData.business.tourEmbedBase}?sceneId=${sceneId}`;
     }
 
-    document.querySelectorAll(".scene-btn").forEach(btn => btn.classList.remove("active"));
-    if (btnElement) {
-      btnElement.classList.add("active");
-    } else {
-      document.querySelectorAll(".scene-btn").forEach(btn => {
-        if (btn.getAttribute("onclick") && btn.getAttribute("onclick").includes(sceneId)) {
-          btn.classList.add("active");
-        }
-      });
-    }
+    // Re-render buttons to update Tailwind classes correctly based on currentSceneId
+    this.renderSceneButtons();
   }
 };

@@ -33,7 +33,7 @@ const AppController = {
   },
 
   observeReveals() {
-    document.querySelectorAll(".reveal").forEach(el => {
+    document.querySelectorAll(".fade-up-slow").forEach(el => {
       if (this.observer) this.observer.observe(el);
     });
   },
@@ -42,9 +42,9 @@ const AppController = {
     const navbar = document.getElementById("navbar");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 60) {
-        navbar.classList.add("shadow-2xl", "bg-slate-950/95");
+        navbar.classList.add("nav-scrolled");
       } else {
-        navbar.classList.remove("shadow-2xl", "bg-slate-950/95");
+        navbar.classList.remove("nav-scrolled");
       }
     });
   },
