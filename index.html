@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Chacra Don Andres - Salon de Bodas, Fiestas de 15 y Eventos en Montevideo. Hasta 250 personas. A 25 min de MVD."/>
+<title>Chacra Don Andres | Bodas, 15 Anos y Eventos en Montevideo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config={theme:{extend:{
+  fontFamily:{serif:["Cormorant Garamond","Georgia","serif"],sans:["Plus Jakarta Sans","sans-serif"]},
+  colors:{gold:{400:"#e8c96a",500:"#cfa24b",600:"#b28432"}}
+}}}
+</script>
+<style>
+body{font-family:"Plus Jakarta Sans",sans-serif;background:#0a0f1e;color:#f1f5f9}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif}
+.gold-gradient{background:linear-gradient(135deg,#f5e6a3 0%,#cfa24b 50%,#8a6120 100%)}
+.gold-text{background:linear-gradient(135deg,#f5e6a3 0%,#cfa24b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.glass{background:rgba(10,15,30,.88);backdrop-filter:blur(14px)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.tab-btn.active{background:rgba(207,162,75,.15);border-color:rgba(207,162,75,.6);color:#cfa24b}
+.tab-content{display:none}.tab-content.active{display:block}
+.scene-btn.active{background:rgba(207,162,75,.2);border-color:rgba(207,162,75,.5);color:#e8c96a}
+.btn-gold{background:linear-gradient(90deg,#cfa24b 0%,#f5e6a3 25%,#cfa24b 50%,#8a6120 75%,#cfa24b 100%);background-size:200% auto;animation:shimmer 2.5s linear infinite;color:#0a0f1e;font-weight:700}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.gallery-overlay{opacity:0;transition:opacity .3s ease}
+.gallery-card:hover .gallery-overlay{opacity:1}
+#tourFrame{border:0;width:100%;height:100%;position:absolute;inset:0}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:#cfa24b;border-radius:3px}
+</style>
+</head>
+<body class="bg-slate-950 antialiased">
+
+<!-- ANNOUNCEMENT BAR -->
+<div id="annoBar" class="relative z-50 py-2.5 px-4 text-center text-xs sm:text-sm font-semibold text-slate-950 flex items-center justify-center gap-2 gold-gradient">
+  Temporada de Bodas &amp; 15 Anos 2026/2027 &mdash; <strong>Fechas Disponibles</strong> &middot; Consulta hoy
+  <button onclick="document.getElementById('annoBar').style.display='none'" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-950/60 hover:text-slate-950"><i class="fa-solid fa-xmark text-xs"></i></button>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="sticky top-0 z-40 glass border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <a href="#hero" class="flex items-center gap-3 shrink-0">
+      <div class="w-9 h-9 rounded-full border border-yellow-600/50 flex items-center justify-center bg-slate-950/60"><i class="fa-solid fa-leaf text-yellow-500 text-sm"></i></div>
+      <div><div class="font-serif text-xl font-bold text-white tracking-wide">Don Andres</div><div class="text-[9px] uppercase tracking-[0.22em] text-yellow-500 font-semibold">Chacra &amp; Eventos</div></div>
+    </a>
+    <div class="hidden lg:flex items-center gap-7 text-[11px] font-semibold uppercase tracking-widest text-slate-400">
+      <a href="#tour360" class="hover:text-yellow-400 transition text-yellow-400 flex items-center gap-1.5"><i class="fa-solid fa-vr-cardboard"></i> Tour 360</a>
+      <a href="#eventos" class="hover:text-yellow-400 transition">Eventos</a>
+      <a href="#espacios" class="hover:text-yellow-400 transition">Espacios</a>
+      <a href="#servicios" class="hover:text-yellow-400 transition">Servicios</a>
+      <a href="#contacto" class="hover:text-yellow-400 transition">Contacto</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20quiero%20agendar%20una%20visita%20a%20Chacra%20Don%20Andres" target="_blank" class="btn-gold px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-lg hidden sm:flex items-center gap-2"><i class="fa-brands fa-whatsapp text-sm"></i>Agendar Visita</a>
+      <button id="menuToggle" class="lg:hidden text-slate-300 hover:text-white p-1"><i class="fa-solid fa-bars text-xl"></i></button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-white/5 glass px-6 py-5 space-y-4 text-sm font-semibold">
+    <a href="#tour360" class="block text-yellow-400" onclick="closeMenu()">Tour Virtual 360</a>
+    <a href="#eventos" class="block text-slate-300 hover:text-white" onclick="closeMenu()">Tipos de Eventos</a>
+    <a href="#espacios" class="block text-slate-300 hover:text-white" onclick="closeMenu()">Nuestros Espacios</a>
+    <a href="#servicios" class="block text-slate-300 hover:text-white" onclick="closeMenu()">Servicios</a>
+    <a href="#cotizador" class="block text-slate-300 hover:text-white" onclick="closeMenu()">Consultar Fecha</a>
+    <a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20quiero%20agendar%20una%20visita%20a%20Chacra%20Don%20Andres" target="_blank" class="btn-gold block text-center px-5 py-3 rounded-full text-xs uppercase tracking-wider"><i class="fa-brands fa-whatsapp mr-2"></i>Agendar Visita</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center scale-110" style="background-image:url('https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-9v4WiS7A0K9-scene.jpg')" id="heroBg"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-slate-950/65 via-slate-950/50 to-slate-950"></div>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-24 space-y-8">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-yellow-600/40 bg-yellow-600/5 text-yellow-400 text-[11px] font-semibold uppercase tracking-widest backdrop-blur-sm">
+      <i class="fa-solid fa-location-dot"></i>Las Piedras &middot; A 25 minutos de Montevideo
+    </div>
+    <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tight">
+      El lugar donde tus<br/><em class="gold-text not-italic">momentos inolvidables</em><br/>cobran vida
+    </h1>
+    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+      Chacra integral para Bodas, Fiestas de 15 Anos y Eventos Empresariales. Salon climatizado, parque arbolado, pista con robotica de luces y gastronomia propia.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+      <a href="#tour360" class="w-full sm:w-auto flex items-center justify-center gap-2.5 px-7 py-4 rounded-full border border-yellow-600/40 bg-slate-950/60 backdrop-blur-sm text-yellow-300 font-semibold text-xs uppercase tracking-widest hover:bg-yellow-600/10 transition">
+        <i class="fa-solid fa-street-view text-base"></i>Recorrer en Tour 360
+      </a>
+      <a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20quiero%20consultar%20disponibilidad%20para%20un%20evento%20en%20Chacra%20Don%20Andres" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2.5 px-7 py-4 rounded-full btn-gold text-xs uppercase tracking-widest shadow-2xl">
+        <i class="fa-brands fa-whatsapp text-base"></i>Consultar Disponibilidad con Karen
+      </a>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 max-w-3xl mx-auto border-t border-white/10">
+      <div class="glass rounded-2xl p-4 text-left border border-white/5"><div class="text-yellow-400 font-serif text-3xl font-bold">250</div><div class="text-slate-400 text-[11px] mt-1">Capacidad maxima</div></div>
+      <div class="glass rounded-2xl p-4 text-left border border-white/5"><div class="text-yellow-400 font-serif text-3xl font-bold">2</div><div class="text-slate-400 text-[11px] mt-1">Salones independientes</div></div>
+      <div class="glass rounded-2xl p-4 text-left border border-white/5"><div class="text-yellow-400 font-serif text-3xl font-bold">&#x26A1;</div><div class="text-slate-400 text-[11px] mt-1">Grupo electrogeno propio</div></div>
+      <div class="glass rounded-2xl p-4 text-left border border-white/5"><div class="text-yellow-400 font-serif text-3xl font-bold">25'</div><div class="text-slate-400 text-[11px] mt-1">Minutos desde MVD</div></div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 text-[10px] uppercase tracking-widest animate-bounce">
+    <span>Explorar</span><i class="fa-solid fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- EVENT TABS -->
+<section id="eventos" class="py-24 bg-gradient-to-b from-slate-950 to-[#080d1a]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-3 mb-14 reveal">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-yellow-500">Tu Celebracion, a tu Medida</p>
+      <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white">Eventos Disenados para <em class="gold-text">Emocionar</em></h2>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3 mb-10 reveal d1">
+      <button onclick="switchTab('bodas')" class="tab-btn active flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-sm font-semibold text-slate-300 transition" data-tab="bodas">&#128141; Bodas</button>
+      <button onclick="switchTab('quince')" class="tab-btn flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-sm font-semibold text-slate-300 transition" data-tab="quince">&#128081; Fiestas de 15</button>
+      <button onclick="switchTab('empresas')" class="tab-btn flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-sm font-semibold text-slate-300 transition" data-tab="empresas">&#128084; Empresarial</button>
+      <button onclick="switchTab('granja')" class="tab-btn flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-sm font-semibold text-slate-300 transition" data-tab="granja">&#127807; Granja</button>
+    </div>
+    <div class="reveal d2">
+
+      <div class="tab-content active" id="tab-bodas">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-5">
+            <h3 class="font-serif text-4xl sm:text-5xl font-bold text-white">Bodas &amp; <em class="gold-text">Casamientos Civiles</em></h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Celebra tu casamiento en un entorno de naturaleza viva. Desde la ceremonia al atardecer hasta el baile de madrugada, todo en un solo lugar de ensueño.</p>
+            <ul class="space-y-2.5 text-sm text-slate-300">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-yellow-400 mt-0.5 shrink-0"></i> Ceremonia al aire libre en el parque arbolado</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-yellow-400 mt-0.5 shrink-0"></i> Salon Principal climatizado hasta 250 comensales</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-yellow-400 mt-0.5 shrink-0"></i> Menu de gala, cena buffet y barra libre</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-yellow-400 mt-0.5 shrink-0"></i> Pista de baile con luces roboticas y efecto humo</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-yellow-400 mt-0.5 shrink-0"></i> Suite nupcial y estacionamiento vigilado</li>
+            </ul>
+            <a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20quiero%20consultar%20disponibilidad%20y%20presupuesto%20para%20una%20Boda%20en%20Chacra%20Don%20Andres" target="_blank" class="inline-flex items-center gap-2.5 btn-gold px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Consultar Presupuesto de Boda
+            </a>
+          </div>
+          <div class="relative">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
+              <img src="https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-FrNbIHWhMTJ-scene.jpg" alt="Boda en Chacra Don Andres" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy"/>
+            </div>
+            <div class="absolute -bottom-4 -left-4 glass border border-yellow-600/40 rounded-2xl p-4 text-sm shadow-xl">
+              <div class="text-yellow-400 font-bold">Hasta 250 invitados</div>
+              <div class="text-slate-400 text-xs mt-0.5">Turno diurno o nocturno</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-quince">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-5">
+            <h3 class="font-serif text-4xl sm:text-5xl font-bold text-white">La Noche de <em class="text-pink-300">tus 15 Anos</em></h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Una fiesta unica e irrepetible. Sector exclusivo de adolescentes, robotica de luces y DJ profesional para una noche que nadie va a olvidar.</p>
+            <ul class="space-y-2.5 text-sm text-slate-300">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-pink-400 mt-0.5 shrink-0"></i> Pista de baile con luces roboticas y efecto humo</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-pink-400 mt-0.5 shrink-0"></i> Sector exclusivo de adolescentes con livings</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-pink-400 mt-0.5 shrink-0"></i> Barra de tragos sin alcohol y snack bar</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-pink-400 mt-0.5 shrink-0"></i> DJ profesional y pantallas LED gigantes</li>
+            </ul>
+            <a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20quiero%20organizar%20la%20Fiesta%20de%2015%20Anos%20en%20Chacra%20Don%20Andres.%20Tienen%20fechas%20disponibles%3F" target="_blank" class="inline-flex items-center gap-2.5 bg-gradient-to-r from-pink-600 to-rose-500 hover:opacity-90 text-white px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Consultar Paquete de 15 Anos
+            </a>
+          </div>
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
+            <img src="https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-LU2gQ_j4btj-scene.jpg" alt="Pista de Baile" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-empresas">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-5">
+            <h3 class="font-serif text-4xl sm:text-5xl font-bold text-white">Eventos <em class="text-blue-300">Corporativos</em></h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Tu equipo merece un entorno diferente. Jornadas de integracion, almuerzos de fin de ano con parrillero criollo y salon con tecnologia audiovisual.</p>
+            <ul class="space-y-2.5 text-sm text-slate-300">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-400 mt-0.5 shrink-0"></i> Jornadas de team building en parque privado</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-400 mt-0.5 shrink-0"></i> Salon climatizado con proyector y audio HD</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-400 mt-0.5 shrink-0"></i> Parrillero criollo y catering gourmet</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-400 mt-0.5 shrink-0"></i> Estacionamiento privado amplio y seguro</li>
+            </ul>
+            <a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20quiero%20cotizar%20un%20evento%20corporativo%20o%20almuerzo%20de%20empresa%20en%20Chacra%20Don%20Andres" target="_blank" class="inline-flex items-center gap-2.5 bg-gradient-to-r from-blue-700 to-indigo-600 hover:opacity-90 text-white px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Cotizar Evento Corporativo
+            </a>
+          </div>
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
+            <img src="https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-EAety5uSDAc-scene.jpg" alt="Salon Principal Corporativo" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-granja">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-5">
+            <h3 class="font-serif text-4xl sm:text-5xl font-bold text-white">Granja &amp; <em class="text-emerald-300">Dias de Campo</em></h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Paseos educativos, contacto con animales, cumpleanos infantiles tematicos y salidas escolares en un entorno natural seguro y cercado.</p>
+            <ul class="space-y-2.5 text-sm text-slate-300">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0"></i> Paseos educativos con animales de granja</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0"></i> Areas verdes seguras y cercadas para ninos</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0"></i> Cumpleanos infantiles con tematica rural</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0"></i> Meriendas campestres y asados al mediodia</li>
+            </ul>
+            <a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20quiero%20consultar%20por%20un%20paseo%20de%20granja%20o%20cumpleanos%20infantil%20en%20Chacra%20Don%20Andres" target="_blank" class="inline-flex items-center gap-2.5 bg-gradient-to-r from-emerald-700 to-green-600 hover:opacity-90 text-white px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Consultar Granja y Cumpleanos
+            </a>
+          </div>
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
+            <img src="https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-FrNbIHWhMTJ-scene.jpg" alt="Parque y Granja" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TOUR 360 -->
+<section id="tour360" class="py-24 bg-[#080d1a]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-3 mb-12 reveal">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 text-[11px] font-bold uppercase tracking-widest"><i class="fa-solid fa-vr-cardboard"></i> Experiencia Virtual Inmersiva</div>
+      <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white">Recorre la Chacra en <em class="gold-text">360 Grados</em></h2>
+      <p class="text-slate-400 text-sm max-w-lg mx-auto">Arrastra con el dedo o mouse para explorar cada rincon. Usa los botones para saltar entre espacios.</p>
+    </div>
+    <div class="reveal d1 bg-slate-900/80 border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
+      <div class="relative w-full" style="padding-top:56.25%">
+        <iframe id="tourFrame" src="https://casas.virtualprop360.uy/tours/avNLpjngi?sceneId=k2sntmWaUa7" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;xr-spatial-tracking" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="bg-slate-950/90 border-t border-white/5 p-4 flex flex-wrap items-center justify-between gap-3">
+        <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider shrink-0"><i class="fa-solid fa-map-pin text-yellow-400 mr-1"></i><span class="hidden sm:inline">Explorar:</span></span>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="setScene(event,'Vqai75LhxpL')" class="scene-btn active px-3 py-2 rounded-xl border border-white/10 text-xs font-semibold text-slate-300 hover:text-yellow-400 transition">Entrada</button>
+          <button onclick="setScene(event,'-XLQKyTz1p1')" class="scene-btn  px-3 py-2 rounded-xl border border-white/10 text-xs font-semibold text-slate-300 hover:text-yellow-400 transition">Salon Principal</button>
+          <button onclick="setScene(event,'O01mA6V_HnT')" class="scene-btn  px-3 py-2 rounded-xl border border-white/10 text-xs font-semibold text-slate-300 hover:text-yellow-400 transition">Pista de Baile</button>
+          <button onclick="setScene(event,'qQsIL49PpG8')" class="scene-btn  px-3 py-2 rounded-xl border border-white/10 text-xs font-semibold text-slate-300 hover:text-yellow-400 transition">Salon El Horno</button>
+          <button onclick="setScene(event,'9WMkC7dKInv')" class="scene-btn  px-3 py-2 rounded-xl border border-white/10 text-xs font-semibold text-slate-300 hover:text-yellow-400 transition">Cancha</button>
+          <button onclick="setScene(event,'gF6OUdeYxI2')" class="scene-btn  px-3 py-2 rounded-xl border border-white/10 text-xs font-semibold text-slate-300 hover:text-yellow-400 transition">Estacionamiento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="espacios" class="py-24 bg-slate-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-3 mb-14 reveal">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-yellow-500">Infraestructura de Primer Nivel</p>
+      <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white">Nuestros <em class="gold-text">Espacios</em></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="lg:col-span-2 gallery-card relative group rounded-3xl overflow-hidden border border-white/5 shadow-2xl reveal">
+        <div class="aspect-[16/9] bg-cover bg-center group-hover:scale-105 transition duration-700" style="background-image:url('https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-EAety5uSDAc-scene.jpg')"></div>
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent flex flex-col justify-end p-6">
+          <h3 class="font-serif text-2xl font-bold text-white">Salon Principal Climatizado</h3>
+          <p class="text-slate-400 text-xs mt-1">Hasta 250 comensales &middot; Pista de baile integrada &middot; Iluminacion de gala</p>
+        </div>
+      </div>
+      <div class="gallery-card relative group rounded-3xl overflow-hidden border border-white/5 shadow-2xl reveal d1">
+        <div class="aspect-square bg-cover bg-center group-hover:scale-105 transition duration-700" style="background-image:url('https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-H-qxZamYcv1-scene.jpg')"></div>
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-5">
+          <h3 class="font-serif text-xl font-bold text-white">Salon El Horno</h3>
+          <p class="text-slate-400 text-xs mt-1">Parrillero criollo &middot; Ambiente rustico</p>
+        </div>
+      </div>
+      <div class="gallery-card relative group rounded-3xl overflow-hidden border border-white/5 shadow-2xl reveal d1">
+        <div class="aspect-square bg-cover bg-center group-hover:scale-105 transition duration-700" style="background-image:url('https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-LU2gQ_j4btj-scene.jpg')"></div>
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-5">
+          <h3 class="font-serif text-xl font-bold text-white">Pista de Baile</h3>
+          <p class="text-slate-400 text-xs mt-1">Robotica de luces &middot; Efectos &middot; DJ</p>
+        </div>
+      </div>
+      <div class="lg:col-span-2 gallery-card relative group rounded-3xl overflow-hidden border border-white/5 shadow-2xl reveal d2">
+        <div class="aspect-[16/9] bg-cover bg-center group-hover:scale-105 transition duration-700" style="background-image:url('https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-FrNbIHWhMTJ-scene.jpg')"></div>
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent flex flex-col justify-end p-6">
+          <h3 class="font-serif text-2xl font-bold text-white">Parque Arbolado &amp; Cancha</h3>
+          <p class="text-slate-400 text-xs mt-1">Areas verdes &middot; Sesiones fotograficas &middot; Recreacion</p>
+        </div>
+      </div>
+      <div class="rounded-3xl border border-yellow-600/40 bg-gradient-to-b from-yellow-600/5 to-transparent p-8 flex flex-col justify-between gap-6 reveal d3">
+        <div class="space-y-3">
+          <i class="fa-solid fa-tree text-yellow-400 text-2xl"></i>
+          <h3 class="font-serif text-2xl font-bold text-white">Granero Rustico</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Escenario fotografico natural para sesiones de novios, quinceaneras y ambientaciones tematicas en el corazon de la chacra.</p>
+        </div>
+        <a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20quisiera%20ver%20el%20Granero%20en%20una%20visita%20a%20Chacra%20Don%20Andres" target="_blank" class="text-xs font-bold text-yellow-400 hover:text-yellow-300 flex items-center gap-2 transition">
+          Coordinar una Visita <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-24 bg-gradient-to-b from-[#080d1a] to-slate-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-3 mb-14 reveal">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-yellow-500">Tranquilidad Total</p>
+      <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white">Servicios <em class="gold-text">All Inclusive</em></h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+      <div class="reveal p-6 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-yellow-600/20 transition space-y-3"><i class="fa-solid fa-utensils text-yellow-400 text-xl"></i><h4 class="font-bold text-white text-sm">Gastronomia Propia</h4><p class="text-slate-400 text-xs">Menus de gala, asados criollos, opciones celiacas y veganas.</p></div>
+      <div class="reveal d1 p-6 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-yellow-600/20 transition space-y-3"><i class="fa-solid fa-music text-yellow-400 text-xl"></i><h4 class="font-bold text-white text-sm">Sonido &amp; DJ Profesional</h4><p class="text-slate-400 text-xs">Sistema HD, DJ con experiencia en bodas y 15 anos, robotica incluida.</p></div>
+      <div class="reveal d2 p-6 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-yellow-600/20 transition space-y-3"><i class="fa-solid fa-wand-magic-sparkles text-yellow-400 text-xl"></i><h4 class="font-bold text-white text-sm">Ambientacion</h4><p class="text-slate-400 text-xs">Livings, centros de mesa e iluminacion decorativa personalizada.</p></div>
+      <div class="reveal d1 p-6 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-yellow-600/20 transition space-y-3"><i class="fa-solid fa-shield-halved text-yellow-400 text-xl"></i><h4 class="font-bold text-white text-sm">Seguridad Privada</h4><p class="text-slate-400 text-xs">Personal capacitado en acceso e interior del predio durante todo el evento.</p></div>
+      <div class="reveal d2 p-6 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-yellow-600/20 transition space-y-3"><i class="fa-solid fa-bolt text-yellow-400 text-xl"></i><h4 class="font-bold text-white text-sm">Grupo Electrogeno</h4><p class="text-slate-400 text-xs">Energia garantizada. Ante cualquier corte, tu fiesta no para.</p></div>
+      <div class="reveal d3 p-6 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-yellow-600/20 transition space-y-3"><i class="fa-solid fa-car-side text-yellow-400 text-xl"></i><h4 class="font-bold text-white text-sm">Estacionamiento Privado</h4><p class="text-slate-400 text-xs">Amplio predio vigilado con capacidad para mas de 80 vehiculos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="py-24 bg-slate-950 border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-3 mb-14 reveal">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-yellow-500">Lo que Dicen Nuestras Familias</p>
+      <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white">La Mejor <em class="gold-text">Referencia</em></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="reveal bg-gradient-to-b from-slate-900 to-slate-950 border border-white/5 rounded-3xl p-7 space-y-5">
+        <div class="flex gap-1 text-yellow-400 text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="text-slate-300 text-sm leading-relaxed italic font-light">"Hicimos el casamiento de nuestros suenos aca. El salon quedo precioso, la comida estuvo fenomenal y Karen nos ayudo con todo desde el primer momento. El tour 360 nos convencio antes de ir a visitarlos."</p>
+        <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center text-slate-950 font-bold text-sm">M</div>
+          <div><div class="font-semibold text-white text-sm">Martina &amp; Federico</div><div class="text-slate-500 text-xs">Boda &middot; Noviembre 2025</div></div>
+        </div>
+      </div>
+      <div class="reveal d1 bg-gradient-to-b from-slate-900 to-slate-950 border border-white/5 rounded-3xl p-7 space-y-5">
+        <div class="flex gap-1 text-yellow-400 text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="text-slate-300 text-sm leading-relaxed italic font-light">"Los 15 de mi hija Sofi superaron todas las expectativas. La pista con las luces roboticas fue increible, los adolescentes enloquecieron. La chacra es otro nivel."</p>
+        <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white font-bold text-sm">C</div>
+          <div><div class="font-semibold text-white text-sm">Claudia Rodriguez</div><div class="text-slate-500 text-xs">Fiesta de 15 Anos &middot; Agosto 2025</div></div>
+        </div>
+      </div>
+      <div class="reveal d2 bg-gradient-to-b from-slate-900 to-slate-950 border border-white/5 rounded-3xl p-7 space-y-5">
+        <div class="flex gap-1 text-yellow-400 text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="text-slate-300 text-sm leading-relaxed italic font-light">"Organizamos el fin de ano de la empresa en el Salon El Horno y fue un exito rotundo. El asado estuvo excelente y el estacionamiento es muy comodo. Lo recomendamos sin dudas."</p>
+        <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">D</div>
+          <div><div class="font-semibold text-white text-sm">Diego M., RRHH</div><div class="text-slate-500 text-xs">Evento Corporativo &middot; Diciembre 2025</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COTIZADOR EXPRESS -->
+<section id="cotizador" class="py-24 bg-[#080d1a]">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <div class="text-center space-y-3 mb-12 reveal">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-yellow-500">Respuesta en menos de 15 minutos</p>
+      <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white">Consulta tu <em class="gold-text">Fecha Disponible</em></h2>
+      <p class="text-slate-400 text-sm">Completa los datos y te armamos la propuesta directo por WhatsApp con Karen.</p>
+    </div>
+    <div class="reveal d1 bg-gradient-to-b from-slate-900 to-slate-950 border border-yellow-600/40 rounded-3xl p-6 sm:p-10 shadow-2xl">
+      <form id="quoteForm" onsubmit="sendQuote(event)" class="space-y-5 text-sm">
+        <div class="space-y-1.5">
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Tipo de Evento</label>
+          <select id="qEventType" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:border-yellow-500 focus:outline-none">
+            <option value="Boda / Casamiento Civil">&#128141; Boda / Casamiento Civil</option>
+            <option value="Fiesta de 15 Anos">&#128081; Fiesta de 15 Anos</option>
+            <option value="Evento Corporativo / Fin de Ano">&#128084; Evento Corporativo</option>
+            <option value="Cumpleanos / Dia de Campo">&#127807; Cumpleanos / Dia de Campo</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="space-y-1.5">
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Fecha Estimada</label>
+            <input type="date" id="qDate" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:border-yellow-500 focus:outline-none"/>
+          </div>
+          <div class="space-y-1.5">
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Cantidad de Invitados</label>
+            <input type="number" id="qGuests" placeholder="Ej: 150" min="20" max="300" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:border-yellow-500 focus:outline-none"/>
+          </div>
+        </div>
+        <div class="space-y-1.5">
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Tu Nombre Completo</label>
+          <input type="text" id="qName" placeholder="Ej: Maria Fernandez" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:border-yellow-500 focus:outline-none"/>
+        </div>
+        <button type="submit" class="w-full btn-gold py-4 px-6 rounded-2xl text-sm font-bold uppercase tracking-widest shadow-2xl flex items-center justify-center gap-3 hover:opacity-90">
+          <i class="fa-brands fa-whatsapp text-lg"></i>Enviar Consulta Directa a Karen
+        </button>
+        <p class="text-center text-slate-500 text-[11px]"><i class="fa-solid fa-lock mr-1"></i>Tu informacion es privada y solo se usa para tu evento.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO & MAPA -->
+<section id="contacto" class="py-24 bg-slate-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-3 mb-14 reveal">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-yellow-500">Estamos cerca</p>
+      <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white">Como <em class="gold-text">Llegar</em></h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div class="reveal rounded-3xl overflow-hidden border border-white/5 shadow-2xl" style="height:380px">
+        <iframe src="https://maps.google.com/maps?q=Chacra+Don+Andres+Monte+Sosa+6610+Las+Piedras+Montevideo&output=embed" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="reveal d1 space-y-5">
+        <h3 class="font-serif text-3xl font-bold text-white">Chacra Don Andres</h3>
+        <p class="text-slate-400 text-sm">Ubicada en Las Piedras / Montevideo rural, a solo 25 minutos del centro de Montevideo por camino asfaltado.</p>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-900/60 border border-white/5"><i class="fa-solid fa-location-dot text-yellow-400 text-lg w-5 text-center shrink-0 mt-0.5"></i><div><div class="font-semibold text-white">Direccion</div><div class="text-slate-400 text-xs mt-0.5">Cno. Monte Sosa 6610, Las Piedras, Montevideo</div></div></div>
+          <a href="https://wa.me/59892504871?text=Hola%20Karen" target="_blank" class="flex items-start gap-4 p-4 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-emerald-500/30 transition"><i class="fa-brands fa-whatsapp text-emerald-400 text-lg w-5 text-center shrink-0 mt-0.5"></i><div><div class="font-semibold text-white">WhatsApp Karen</div><div class="text-slate-400 text-xs mt-0.5">+598 92 504 871 &middot; Atencion todos los dias</div></div></a>
+          <a href="mailto:Contacto@chacradonandres.com.uy" class="flex items-start gap-4 p-4 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-blue-500/30 transition"><i class="fa-solid fa-envelope text-blue-400 text-lg w-5 text-center shrink-0 mt-0.5"></i><div><div class="font-semibold text-white">Email</div><div class="text-slate-400 text-xs mt-0.5">Contacto@chacradonandres.com.uy</div></div></a>
+          <a href="https://www.instagram.com/chacradonandres" target="_blank" class="flex items-start gap-4 p-4 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-pink-500/30 transition"><i class="fa-brands fa-instagram text-pink-400 text-lg w-5 text-center shrink-0 mt-0.5"></i><div><div class="font-semibold text-white">Instagram</div><div class="text-slate-400 text-xs mt-0.5">@chacradonandres</div></div></a>
+        </div>
+        <a href="https://www.google.com/maps/dir//Cno.+Monte+Sosa+6610,+Las+Piedras" target="_blank" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full border border-yellow-600/40 text-yellow-400 text-xs font-bold uppercase tracking-widest hover:bg-yellow-600/5 transition">
+          <i class="fa-solid fa-map-location-dot"></i>Abrir en Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#060a14] border-t border-white/5 pt-14 pb-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="space-y-4 lg:col-span-2">
+        <div class="flex items-center gap-3"><i class="fa-solid fa-leaf text-yellow-400 text-lg"></i><div><div class="font-serif text-xl font-bold text-white">Chacra Don Andres</div><div class="text-[10px] uppercase tracking-widest text-yellow-500 font-semibold">Eventos &amp; Naturaleza</div></div></div>
+        <p class="text-slate-500 text-xs leading-relaxed max-w-xs">Salon de eventos para bodas, fiestas de 15 anos, eventos corporativos y dias de campo en Montevideo, Uruguay.</p>
+        <div class="flex items-center gap-3">
+          <a href="https://www.instagram.com/chacradonandres" target="_blank" class="w-9 h-9 rounded-xl bg-slate-900 border border-white/5 hover:border-pink-500/40 flex items-center justify-center text-slate-400 hover:text-pink-400 transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+          <a href="https://wa.me/59892504871" target="_blank" class="w-9 h-9 rounded-xl bg-slate-900 border border-white/5 hover:border-emerald-500/40 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+          <a href="mailto:Contacto@chacradonandres.com.uy" class="w-9 h-9 rounded-xl bg-slate-900 border border-white/5 hover:border-blue-500/40 flex items-center justify-center text-slate-400 hover:text-blue-400 transition"><i class="fa-solid fa-envelope text-sm"></i></a>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-slate-300">Navegacion</h4>
+        <ul class="space-y-2.5 text-xs text-slate-500">
+          <li><a href="#tour360" class="hover:text-yellow-400 transition">Tour Virtual 360</a></li>
+          <li><a href="#eventos" class="hover:text-yellow-400 transition">Tipos de Eventos</a></li>
+          <li><a href="#espacios" class="hover:text-yellow-400 transition">Nuestros Espacios</a></li>
+          <li><a href="#servicios" class="hover:text-yellow-400 transition">Servicios All Inclusive</a></li>
+          <li><a href="#cotizador" class="hover:text-yellow-400 transition">Cotizador Express</a></li>
+          <li><a href="#contacto" class="hover:text-yellow-400 transition">Contacto y Ubicacion</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-slate-300">Contacto</h4>
+        <div class="space-y-2.5 text-xs text-slate-500">
+          <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-yellow-600/70"></i> 092 504 871 (Karen)</p>
+          <p class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-yellow-600/70"></i> Las Piedras, Montevideo</p>
+          <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-yellow-600/70"></i> Atencion todos los dias</p>
+        </div>
+        <a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20consulto%20disponibilidad%20en%20Chacra%20Don%20Andres" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-emerald-400 px-4 py-2 rounded-xl text-xs font-semibold transition">
+          <i class="fa-brands fa-whatsapp"></i>Escribir a Karen
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-600">
+      <span>&copy; 2026 Chacra Don Andres &middot; Todos los derechos reservados</span>
+      <span>Diseno &amp; Desarrollo por <span class="text-yellow-600 font-semibold">Victor Correa</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WhatsApp -->
+<a href="https://wa.me/59892504871?text=Hola%20Karen%2C%20vi%20la%20web%20de%20Chacra%20Don%20Andres%20y%20quiero%20consultar%20disponibilidad" target="_blank"
+   class="fixed bottom-6 right-6 z-50 flex items-center gap-0 bg-emerald-500 hover:bg-emerald-400 text-white rounded-full shadow-2xl transition-all duration-300 overflow-hidden group px-4 py-4 hover:px-5">
+  <i class="fa-brands fa-whatsapp text-2xl shrink-0"></i>
+  <span class="max-w-0 opacity-0 whitespace-nowrap group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-2 text-xs font-bold transition-all duration-300">Consultar con Karen</span>
+</a>
+
+<script>
+document.getElementById('menuToggle').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+function closeMenu(){document.getElementById('mobileMenu').classList.add('hidden')}
+function switchTab(name){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.querySelector('[data-tab="'+name+'"]').classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+function setScene(ev,sceneId){
+  document.getElementById('tourFrame').src='https://casas.virtualprop360.uy/tours/avNLpjngi?sceneId='+sceneId;
+  document.querySelectorAll('.scene-btn').forEach(b=>b.classList.remove('active'));
+  ev.currentTarget.classList.add('active');
+}
+function sendQuote(e){
+  e.preventDefault();
+  var type=document.getElementById('qEventType').value;
+  var date=document.getElementById('qDate').value;
+  var guests=document.getElementById('qGuests').value;
+  var name=document.getElementById('qName').value;
+  var d=date?new Date(date+'T00:00:00').toLocaleDateString('es-UY',{day:'numeric',month:'long',year:'numeric'}):'a confirmar';
+  var msg='Hola Karen! Mi nombre es '+name+' y escribo desde la web de Chacra Don Andres.\n\nQuiero consultar disponibilidad para:\n- Evento: '+type+'\n- Fecha: '+d+'\n- Invitados: '+guests+' personas\n\nMuchas gracias!';
+  window.open('https://wa.me/59892504871?text='+encodeURIComponent(msg),'_blank');
+}
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+window.addEventListener('scroll',function(){
+  var bg=document.getElementById('heroBg');
+  if(bg)bg.style.transform='scale(1.1) translateY('+window.pageYOffset*0.04+'px)';
+  var nav=document.getElementById('navbar');
+  if(window.scrollY>80){nav.classList.add('shadow-xl')}else{nav.classList.remove('shadow-xl')}
+});
+</script>
+</body>
+</html>
