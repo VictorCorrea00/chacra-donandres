@@ -7,6 +7,7 @@ const AppController = {
     this.setupMobileMenu();
 
     // Iniciar Micro-interacciones Premium
+    this.initLenis();
     this.initPreloader();
     
     this.initParallax();
@@ -68,6 +69,55 @@ const AppController = {
       scrollTrigger: { trigger: "#actividades", start: "top 80%" }
     });
 
+    // ── COUNTER STRIP ──
+    document.querySelectorAll('.count').forEach(counter => {
+      const target = parseFloat(counter.getAttribute('data-target'));
+      const isDecimal = target % 1 !== 0;
+      gsap.to(counter, {
+        innerHTML: target,
+        duration: 2, ease: "power2.out",
+        snap: { innerHTML: isDecimal ? 0.1 : 1 },
+        scrollTrigger: { trigger: ".counter-box", start: "top 85%", once: true },
+        onUpdate: function() {
+          if (isDecimal) counter.innerHTML = Number(this.targets()[0].innerHTML).toFixed(1);
+        }
+      });
+    });
+
+    // ── SALONES: header stagger ──
+    gsap.from(".gsap-stagger-salones > *", {
+      y: 60, opacity: 0, duration: 1.2, stagger: 0.2, ease: "power3.out",
+      scrollTrigger: { trigger: "#salones", start: "top 80%" }
+    });
+
+    // ── SALONES: clip-path reveal on cards ──
+    document.querySelectorAll('.clip-reveal').forEach(el => {
+      gsap.to(el, {
+        clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power3.inOut",
+        scrollTrigger: { trigger: el, start: "top 85%" }
+      });
+    });
+
+    // ── SALON CARDS stagger ──
+    gsap.from(".salon-card", {
+      y: 80, opacity: 0, duration: 1, stagger: 0.15, ease: "back.out(1.4)",
+      scrollTrigger: { trigger: "#salones .grid", start: "top 80%" }
+    });
+
+    // ── GRANJA: clip-path reveal ──
+    document.querySelectorAll('.clip-reveal-target').forEach(el => {
+      gsap.to(el, {
+        clipPath: "inset(0 0% 0 0%)", duration: 1.5, ease: "power3.inOut",
+        scrollTrigger: { trigger: "#granja", start: "top 75%" }
+      });
+    });
+
+    // ── ACTIVIDADES: scale in ──
+    gsap.from(".flip-container", {
+      scale: 0.92, y: 40, opacity: 0, duration: 0.9, stagger: 0.2, ease: "power2.out",
+      scrollTrigger: { trigger: "#actividades", start: "top 80%" }
+    });
+
   },
 
   
@@ -112,6 +162,15 @@ const AppController = {
     });
   },
 
+
+  initLenis() {
+    if (typeof Lenis === 'undefined') return;
+    const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  },
+
   setupNavbarBehavior() { /* Removido para layout Gretna */ },
 
 
@@ -150,28 +209,34 @@ const AppController = {
     }, 5000);
   },
 
+
   setupMobileMenu() {
     const toggleBtn = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
-    if (toggleBtn && mobileMenu) {
-      toggleBtn.addEventListener("click", () => {
-        if(mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.remove("hidden");
-          mobileMenu.classList.add("flex");
-        } else {
-          mobileMenu.classList.add("hidden");
-          mobileMenu.classList.remove("flex");
-        }
+    if (!toggleBtn || !mobileMenu) return;
+
+    let isOpen = false;
+
+    toggleBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      if (isOpen) {
+        mobileMenu.style.transform = "translateX(0)";
+        document.body.style.overflow = "hidden";
+      } else {
+        mobileMenu.style.transform = "translateX(100%)";
+        document.body.style.overflow = "";
+      }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        isOpen = false;
+        mobileMenu.style.transform = "translateX(100%)";
+        document.body.style.overflow = "";
       });
-      // Handle clicks inside the menu to close it
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add("hidden");
-          mobileMenu.classList.remove("flex");
-        });
-      });
-    }
+    });
   },
+
 
   closeMobileMenu() {
     const mobileMenu = document.getElementById("mobileMenu");
