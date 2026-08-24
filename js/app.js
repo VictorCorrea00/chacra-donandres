@@ -83,6 +83,42 @@ const AppController = {
 
   setupNavbarBehavior() { /* Removido para layout Gretna */ },
 
+
+  initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length === 0) return;
+
+    let current = 0;
+    
+    // Setup inicial
+    gsap.set(slides, { opacity: 0 });
+    gsap.set(slides[0], { opacity: 1 });
+    
+    // Animación inicial del primer slide
+    gsap.fromTo(slides[0].querySelector('img'), 
+      { scale: 1 }, 
+      { scale: 1.15, duration: 6, ease: "none" }
+    );
+
+    setInterval(() => {
+      let next = (current + 1) % slides.length;
+      const tl = gsap.timeline();
+      
+      // Fade IN y Zoom progresivo al próximo slide
+      tl.to(slides[next], { opacity: 1, duration: 1.5, ease: "power2.inOut" }, 0);
+      tl.fromTo(slides[next].querySelector('img'), 
+        { scale: 1 }, 
+        { scale: 1.15, duration: 6, ease: "none" }, 
+        0
+      );
+      
+      // Fade OUT del slide actual
+      tl.to(slides[current], { opacity: 0, duration: 1.5, ease: "power2.inOut" }, 0);
+      
+      current = next;
+    }, 5000);
+  },
+
   setupMobileMenu() {
     const toggleBtn = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");

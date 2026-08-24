@@ -79,7 +79,7 @@
   </header>
 
   <!-- Mobile Menu Drawer -->
-  <div id="mobileMenu" class="hidden lg:hidden fixed top-[77px] left-0 w-full h-screen bg-brand-bg z-40 flex-col gap-8 items-center pt-16 text-sm uppercase tracking-[0.2em]">
+  <div id="mobileMenu" class="hidden lg:hidden fixed top-[77px] left-0 w-full h-screen bg-brand-bg z-40 flex-col gap-8 items-center pt-16 text-xs md:text-sm uppercase tracking-[0.2em]">
       <a href="#hero" class="hover:text-brand-accent transition-colors">Inicio</a>
       <a href="#tour360" class="hover:text-brand-accent transition-colors">Tour 360</a>
       <a href="#espacios" class="hover:text-brand-accent transition-colors">Espacios</a>
@@ -115,7 +115,7 @@
   <main class="w-full lg:ml-64 lg:w-[calc(100%-16rem)] mt-[77px] lg:mt-0 bg-brand-bg">
 
      <!-- 1. HERO (Editorial Asimétrico) -->
-     <section id="hero" class="relative w-full h-[90vh] lg:h-screen bg-slate-950 flex flex-col justify-end p-8 lg:p-24 fade-up-slow overflow-hidden">
+     <section id="hero" class="relative w-full h-[90vh] lg:h-screen bg-slate-950 flex flex-col justify-end p-6 lg:p-24 fade-up-slow overflow-hidden">
         <!-- Contenedor del Slider GSAP -->
         <div id="hero-slider" class="absolute inset-0 w-full h-full overflow-hidden">
            <div class="hero-slide absolute inset-0 w-full h-full z-0">
@@ -139,7 +139,7 @@
                 <div class="w-12 h-[1px] bg-brand-accent"></div>
                 <span class="text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-brand-accent font-bold">Las Piedras, Montevideo</span>
               </div>
-              <h2 class="font-serif text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] font-normal tracking-tight mb-8 text-white drop-shadow-2xl">
+              <h2 class="font-serif text-5xl md:text-7xl lg:text-[10rem] leading-[0.85] font-normal tracking-tight mb-8 text-white drop-shadow-2xl">
                 El Mejor<br/><span class="italic gretna-accent pr-4">Entorno</span>
               </h2>
            </div>
@@ -156,7 +156,7 @@
      </section>
 
      <!-- 2. ATRACTIVOS (Grid asimétrico con FOTOS REALES) -->
-     <section id="espacios" class="w-full py-24 lg:py-32 px-8 lg:px-16 bg-brand-bg fade-up-slow border-b border-brand-border/30">
+     <section id="espacios" class="w-full py-16 lg:py-32 px-6 lg:px-16 bg-brand-bg fade-up-slow border-b border-brand-border/30">
         <div class="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
            <div>
               <p class="text-[9px] uppercase tracking-[0.4em] text-brand-accent font-bold mb-4">Descubre el Lugar</p>
@@ -168,7 +168,7 @@
         </div>
         
         <!-- Bento Grid Editorial -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 auto-rows-[350px]">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 auto-rows-[250px] md:auto-rows-[350px]">
            <!-- Salón Principal (Grande Izquierda) -->
            <div class="md:col-span-8 relative group overflow-hidden bg-slate-900 rounded-sm">
              <img src="assets/img/salon-principal.webp" alt="Salón Principal Climatizado" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out" />
