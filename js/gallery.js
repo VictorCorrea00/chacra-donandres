@@ -3,12 +3,12 @@
  */
 const GalleryController = {
   items: [
-    { cat: "bodas", title: "Ceremonia al Atardecer", desc: "Altar natural en el parque arbolado", img: "https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-FrNbIHWhMTJ-scene.jpg" },
-    { cat: "salones", title: "Salon Principal Climatizado", desc: "Mesas vestidas y ambientacion calida", img: "https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-EAety5uSDAc-scene.jpg" },
-    { cat: "15anos", title: "Pista de Baile & Robotica", desc: "Luces moviles y efectos para los 15", img: "https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-LU2gQ_j4btj-scene.jpg" },
-    { cat: "salones", title: "Salon El Horno", desc: "Espacio criollo con parrillero techado", img: "https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-H-qxZamYcv1-scene.jpg" },
-    { cat: "parque", title: "El Granero & Senderos", desc: "Escenario para sesiones de fotos", img: "https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-9v4WiS7A0K9-scene.jpg" },
-    { cat: "parque", title: "Cancha Deportiva & Barbacoa", desc: "Espacio recreativo al aire libre", img: "https://gc.360-data.com/tours/avNLpjngi/avNLpjngi-9WMkC7dKInv-scene.jpg" }
+    { cat: "bodas", title: "Ceremonia al Atardecer", desc: "Altar natural en el parque arbolado", img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80" },
+    { cat: "salones", title: "Salon Principal Climatizado", desc: "Mesas vestidas y ambientacion calida", img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80" },
+    { cat: "15anos", title: "Pista de Baile & Robotica", desc: "Luces moviles y efectos para los 15", img: "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80" },
+    { cat: "salones", title: "Salon El Horno", desc: "Espacio criollo con parrillero techado", img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80" },
+    { cat: "parque", title: "El Granero & Senderos", desc: "Escenario para sesiones de fotos", img: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80" },
+    { cat: "parque", title: "Cancha Deportiva & Barbacoa", desc: "Espacio recreativo al aire libre", img: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80" }
   ],
 
   init() {
