@@ -57,9 +57,9 @@ const GalleryController = {
     `).join("");
 
     // Trigger animations for new items
-    setTimeout(() => {
-      document.querySelectorAll('#galleryGrid .fade-up-slow').forEach(el => el.classList.add('visible'));
-    }, 50);
+    if (window.gsap) {
+      gsap.from('#galleryGrid > div', { opacity: 0, y: 15, duration: 0.5, stagger: 0.05, ease: 'power1.out' });
+    }
   },
 
   openLightbox(imgSrc) {
