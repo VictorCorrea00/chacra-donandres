@@ -125,28 +125,4 @@ h1, h2, h3, .font-serif {
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 
-/* Premium Micro-interactions */
-body.cursor-none, body.cursor-none * {
-  cursor: none !important;
-}
 
-#custom-cursor.hovered {
-  transform: translate(-50%, -50%) scale(2) !important;
-  background-color: var(--accent-gold, #B89C6D);
-}
-
-#cursor-follower.hovered {
-  transform: translate(-50%, -50%) scale(1.5) !important;
-  opacity: 0;
-}
-
-.char {
-  display: inline-block;
-  transform: translateY(100%);
-  opacity: 0;
-}
-
-.magnetic-btn {
-  display: inline-block;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
