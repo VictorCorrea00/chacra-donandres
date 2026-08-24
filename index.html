@@ -40,7 +40,6 @@
             serif: ['"Playfair Display"', 'serif'],
             sans: ['Montserrat', 'sans-serif'],
           },
-        extend: {
           colors: {
             brand: {
               bg: '#FDFCF0',
@@ -62,7 +61,7 @@
     .gretna-hover:hover { color: #8C6A5D; }
   </style>
 </head>
-<body class="bg-brand-bg text-brand-text font-sans overflow-x-hidden flex flex-col lg:flex-row w-full">
+<body class="bg-brand-bg text-brand-text font-sans overflow-x-hidden flex flex-col lg:flex-row w-full max-w-[100vw]">
 
   <!-- Premium Preloader -->
   <div id="premium-preloader" class="fixed inset-0 z-[9999] bg-slate-950 flex items-center justify-center transition-transform duration-1000">
@@ -115,7 +114,7 @@
   <main class="w-full lg:ml-64 lg:w-[calc(100%-16rem)] mt-[77px] lg:mt-0 bg-brand-bg">
 
      <!-- 1. HERO (Editorial Asimétrico) -->
-     <section id="hero" class="relative w-full h-[90vh] lg:h-screen bg-slate-950 flex flex-col justify-end p-6 lg:p-24 fade-up-slow overflow-hidden">
+     <section id="hero" class="relative w-full h-[85vh] lg:h-screen bg-slate-950 flex flex-col justify-end p-6 lg:p-24 fade-up-slow overflow-hidden">
         <!-- Contenedor del Slider GSAP -->
         <div id="hero-slider" class="absolute inset-0 w-full h-full overflow-hidden">
            <div class="hero-slide absolute inset-0 w-full h-full z-0">
@@ -133,7 +132,7 @@
         <div class="absolute inset-0 z-10 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90"></div>
         <div class="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/80 via-transparent to-transparent"></div>
 
-        <div id="hero-content" class="relative z-20 w-full flex flex-col lg:flex-row justify-between items-end gap-12 opacity-0">
+        <div id="hero-content" class="relative z-20 w-full flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 opacity-0">
            <div class="max-w-4xl">
               <div class="flex items-center gap-4 mb-6">
                 <div class="w-12 h-[1px] bg-brand-accent"></div>

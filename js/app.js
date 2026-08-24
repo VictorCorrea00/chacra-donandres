@@ -44,6 +44,7 @@ const AppController = {
   initPreloader() {
     // BUGFIX: Bloquear scroll mientras carga para evitar romper la animación del hero
     document.body.style.overflow = "hidden";
+    window.scrollTo(0, 0);
     
     const tl = gsap.timeline();
     tl.to("#preloader-text", { y: 0, duration: 1, ease: "power4.out", delay: 0.2 })
@@ -51,7 +52,7 @@ const AppController = {
       .to("#premium-preloader", { y: "-100%", duration: 1, ease: "expo.inOut" }, "-=0.3")
       .set("#premium-preloader", { display: "none" })
       .call(() => {
-        document.body.style.overflow = "auto";
+        document.body.style.overflow = "";
         this.animateHeroText();
       });
   },
