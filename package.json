@@ -1,0 +1,26 @@
+{
+  "name": "chacra-don-andres",
+  "version": "1.0.0",
+  "description": "Sitio web oficial y tour 360 de Chacra Don Andr\u00e9s",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite --open --port 3000",
+    "start": "vite --open --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --port 3000",
+    "test": "python tests/run_tests.py"
+  },
+  "keywords": [
+    "chacra",
+    "don-andres",
+    "eventos",
+    "bodas",
+    "montevideo",
+    "tour360"
+  ],
+  "author": "Victor Correa",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
