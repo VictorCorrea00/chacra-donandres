@@ -3,13 +3,13 @@
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-sans);
+  /* font-family: var(--font-sans); gestionado por Tailwind */
   -webkit-font-smoothing: antialiased;
 }
 
 /* Editorial Typography */
 h1, h2, h3, .font-serif {
-  font-family: var(--font-serif);
+  /* font-family: var(--font-serif); gestionado por Tailwind */
   font-weight: 400;
 }
 
@@ -21,7 +21,7 @@ h1, h2, h3, .font-serif {
   padding: 1rem 2.5rem;
   background-color: var(--text-primary);
   color: var(--bg-primary);
-  font-family: var(--font-sans);
+  /* font-family: var(--font-sans); gestionado por Tailwind */
   font-weight: 500;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -43,7 +43,7 @@ h1, h2, h3, .font-serif {
   padding: 1rem 2.5rem;
   background-color: transparent;
   color: var(--text-primary);
-  font-family: var(--font-sans);
+  /* font-family: var(--font-sans); gestionado por Tailwind */
   font-weight: 500;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ h1, h2, h3, .font-serif {
   background-color: transparent;
   border: 1px solid var(--border-subtle);
   padding: 1rem;
-  font-family: var(--font-sans);
+  /* font-family: var(--font-sans); gestionado por Tailwind */
   font-size: 0.9rem;
   color: var(--text-primary);
   transition: border-color 0.3s ease;
