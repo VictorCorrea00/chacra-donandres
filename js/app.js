@@ -74,13 +74,14 @@ const AppController = {
     document.querySelectorAll('.count').forEach(counter => {
       const target = parseFloat(counter.getAttribute('data-target'));
       const isDecimal = target % 1 !== 0;
-      gsap.to(counter, {
-        innerHTML: target,
-        duration: 2, ease: "power2.out",
-        snap: { innerHTML: isDecimal ? 0.1 : 1 },
-        scrollTrigger: { trigger: ".counter-box", start: "top 85%", once: true },
+      let val = { value: 0 };
+      gsap.to(val, {
+        value: target,
+        duration: 2, 
+        ease: "power2.out",
+        scrollTrigger: { trigger: counter.closest('.counter-box') || counter, start: "top 85%", once: true },
         onUpdate: function() {
-          if (isDecimal) counter.innerHTML = Number(this.targets()[0].innerHTML).toFixed(1);
+          counter.innerHTML = isDecimal ? val.value.toFixed(1) : Math.round(val.value);
         }
       });
     });
@@ -94,8 +95,8 @@ const AppController = {
     // ── SALONES: clip-path reveal on cards (fromTo so images visible if GSAP fails)
     document.querySelectorAll('.clip-reveal').forEach(el => {
       gsap.fromTo(el,
-        { clipPath: "inset(0 100% 0 0)" },
-        { clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power3.inOut",
+        { clipPath: "inset(0 100% 0 0)", webkitClipPath: "inset(0 100% 0 0)" },
+        { clipPath: "inset(0 0% 0 0)", webkitClipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power3.inOut",
           scrollTrigger: { trigger: el, start: "top 90%" }
         }
       );
@@ -110,8 +111,8 @@ const AppController = {
     // ── GRANJA: clip-path reveal ──
     document.querySelectorAll('.clip-reveal-target').forEach(el => {
       gsap.fromTo(el,
-        { clipPath: "inset(0 50% 0 50%)" },
-        { clipPath: "inset(0 0% 0 0%)", duration: 1.5, ease: "power3.inOut",
+        { clipPath: "inset(0 50% 0 50%)", webkitClipPath: "inset(0 50% 0 50%)" },
+        { clipPath: "inset(0 0% 0 0%)", webkitClipPath: "inset(0 0% 0 0%)", duration: 1.5, ease: "power3.inOut",
           scrollTrigger: { trigger: "#granja", start: "top 75%" }
         }
       );
@@ -131,7 +132,16 @@ const AppController = {
     document.body.style.overflow = "hidden";
     window.scrollTo(0, 0);
     
-    const tl = gsap.timeline();
+    // Safety fallback (desbloquea tras 4s en caso de error)
+    const fallbackTimeout = setTimeout(() => {
+       document.body.style.overflow = "";
+       const p = document.getElementById("premium-preloader");
+       if (p) p.style.display = "none";
+    }, 4000);
+
+    const tl = gsap.timeline({
+      onComplete: () => clearTimeout(fallbackTimeout)
+    });
     tl.to("#preloader-text", { y: 0, duration: 1, ease: "power4.out", delay: 0.2 })
       .to("#preloader-text", { y: "-100%", duration: 0.8, ease: "power4.in", delay: 0.5 })
       .to("#premium-preloader", { y: "-100%", duration: 1, ease: "expo.inOut" }, "-=0.3")
@@ -190,28 +200,35 @@ const AppController = {
     gsap.set(slides[0], { opacity: 1 });
     
     // Animación inicial del primer slide
-    gsap.fromTo(slides[0].querySelector('img'), 
-      { scale: 1 }, 
-      { scale: 1.15, duration: 6, ease: "none" }
-    );
+    const firstImg = slides[0].querySelector('img');
+    if (firstImg) {
+      gsap.fromTo(firstImg, { scale: 1 }, { scale: 1.15, duration: 6, ease: "none" });
+    }
 
-    setInterval(() => {
+    const nextSlide = () => {
       let next = (current + 1) % slides.length;
       const tl = gsap.timeline();
       
+      const nextImg = slides[next].querySelector('img');
+      
       // Fade IN y Zoom progresivo al próximo slide
       tl.to(slides[next], { opacity: 1, duration: 1.5, ease: "power2.inOut" }, 0);
-      tl.fromTo(slides[next].querySelector('img'), 
-        { scale: 1 }, 
-        { scale: 1.15, duration: 6, ease: "none" }, 
-        0
-      );
+      if (nextImg) {
+        tl.fromTo(nextImg, 
+          { scale: 1 }, 
+          { scale: 1.15, duration: 6, ease: "none" }, 
+          0
+        );
+      }
       
       // Fade OUT del slide actual
       tl.to(slides[current], { opacity: 0, duration: 1.5, ease: "power2.inOut" }, 0);
       
       current = next;
-    }, 5000);
+      gsap.delayedCall(5, nextSlide);
+    };
+
+    gsap.delayedCall(5, nextSlide);
   },
 
 
