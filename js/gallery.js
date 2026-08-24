@@ -2,14 +2,20 @@
  * Galeria Filtrable con Lightbox Modal (Editorial Luxury)
  */
 const GalleryController = {
+  
   items: [
-    { cat: "bodas", title: "Ceremonia al Atardecer", desc: "Altar natural en el parque arbolado", img: "assets/img/boda.jpg" },
-    { cat: "salones", title: "Salon Principal Climatizado", desc: "Mesas vestidas y ambientacion calida", img: "assets/img/salon-principal.jpg" },
-    { cat: "15anos", title: "Pista de Baile & Robotica", desc: "Luces moviles y efectos para los 15", img: "assets/img/pista-baile.jpg" },
-    { cat: "salones", title: "Salon El Horno", desc: "Espacio criollo con parrillero techado", img: "assets/img/salon-horno.jpg" },
-    { cat: "parque", title: "El Granero & Senderos", desc: "Escenario para sesiones de fotos", img: "assets/img/parque.jpg" },
-    { cat: "parque", title: "Cancha Deportiva & Barbacoa", desc: "Espacio recreativo al aire libre", img: "assets/img/parque.jpg" }
+    { cat: "bodas", title: "Ceremonia al Atardecer", desc: "Altar natural en el parque arbolado", img: "assets/img/boda.webp" },
+    { cat: "salones", title: "Salón Principal Climatizado", desc: "Mesas vestidas y ambientación cálida", img: "assets/img/salon-principal.webp" },
+    { cat: "15anos", title: "Pista de Baile & Robótica", desc: "Luces móviles y efectos para los 15", img: "assets/img/pista-baile.webp" },
+    { cat: "salones", title: "Salón El Horno", desc: "Espacio criollo con parrillero techado", img: "assets/img/salon-horno.webp" },
+    { cat: "parque", title: "Piscina Techada Climatizada", desc: "Diversión asegurada todo el año", img: "assets/img/piscina-Don-Andres.webp" },
+    { cat: "parque", title: "Granja Interactiva - Llamas", desc: "Contacto con la naturaleza", img: "assets/img/LLAMA01.webp" },
+    { cat: "parque", title: "Granja Interactiva - Ovejas", desc: "Nuestros animales", img: "assets/img/OVEJA02.webp" },
+    { cat: "parque", title: "Aves de la Chacra", desc: "Pavos reales y más", img: "assets/img/PAVO.webp" },
+    { cat: "parque", title: "Tirolesa y Juegos", desc: "Actividades recreativas infantiles", img: "assets/img/JUEGOS004-1.webp" },
+    { cat: "parque", title: "Patio y Carreta Rústica", desc: "Rincones ideales para fotos", img: "assets/img/carreta30.webp" }
   ],
+
 
   init() {
     this.renderGallery("all");
