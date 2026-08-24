@@ -34,24 +34,28 @@ const AppController = {
     });
   },
 
-  setupNavbarBehavior() {
-    const navbar = document.getElementById("navbar");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 60) {
-        navbar.classList.add("nav-scrolled", "text-brand-text", "py-4");
-        navbar.classList.remove("text-white", "py-6");
-      } else {
-        navbar.classList.remove("nav-scrolled", "text-brand-text", "py-4");
-        navbar.classList.add("text-white", "py-6");
-      }
-    });
-  },
+  setupNavbarBehavior() { /* Removido para layout Gretna */ },
 
   setupMobileMenu() {
     const toggleBtn = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     if (toggleBtn && mobileMenu) {
-      toggleBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+      toggleBtn.addEventListener("click", () => {
+        if(mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.classList.add("flex");
+        } else {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+        }
+      });
+      // Handle clicks inside the menu to close it
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+        });
+      });
     }
   },
 
