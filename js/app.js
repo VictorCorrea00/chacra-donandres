@@ -10,7 +10,6 @@ const AppController = {
     this.initPreloader();
     
     this.initParallax();
-    this.initHeroSlider();
 
     this.renderTestimonials();
 
@@ -57,57 +56,13 @@ const AppController = {
       });
   },
 
-  animateHeroText() {
-    const heroText = document.querySelector('.split-text-hero');
-    if(heroText) {
-      const chars = heroText.innerText.split('').map(c => `<span class="char">${c === ' ' ? '&nbsp;' : c}</span>`).join('');
-      heroText.innerHTML = chars;
-      gsap.to('.split-text-hero .char', {
-        y: 0,
-        opacity: 1,
-        duration: 1.2,
-        stagger: 0.05,
-        ease: "power4.out"
-      });
-    }
-  },
-
-  
-
-  
-  initHeroSlider() {
-    const slides = document.querySelectorAll('.hero-slide');
-    if (slides.length === 0) return;
-
-    let current = 0;
-    
-    // Setup inicial
-    gsap.set(slides, { opacity: 0 });
-    gsap.set(slides[0], { opacity: 1 });
-    
-    // Animación inicial del primer slide
-    gsap.fromTo(slides[0].querySelector('img'), 
-      { scale: 1 }, 
-      { scale: 1.15, duration: 6, ease: "none" }
+    animateHeroText() {
+    gsap.fromTo("#hero-content", 
+      { opacity: 0, y: 40 }, 
+      { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
     );
-
-    setInterval(() => {
-      let next = (current + 1) % slides.length;
-      const tl = gsap.timeline();
-      
-      // Fade IN y Zoom progresivo al próximo slide
-      tl.to(slides[next], { opacity: 1, duration: 1.5, ease: "power2.inOut" }, 0);
-      tl.fromTo(slides[next].querySelector('img'), 
-        { scale: 1 }, 
-        { scale: 1.15, duration: 6, ease: "none" }, 
-        0
-      );
-      
-      // Fade OUT del slide actual simultáneamente
-      tl.to(slides[current], { opacity: 0, duration: 1.5, ease: "power2.inOut" }, 0);
-      
-      current = next;
-    }, 5000);
+    // Start slider ONLY after preloader finishes
+    this.initHeroSlider();
   },
 
   initParallax() {
