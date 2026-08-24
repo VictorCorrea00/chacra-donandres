@@ -87,8 +87,8 @@ const AppController = {
     });
 
     // ── SALONES: header stagger ──
-    gsap.from(".gsap-stagger-salones > *", {
-      y: 60, opacity: 0, duration: 1.2, stagger: 0.2, ease: "power3.out",
+    gsap.fromTo(".gsap-stagger-salones > *", { y: 60, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 1.2, stagger: 0.2, ease: "power3.out",
       scrollTrigger: { trigger: "#salones", start: "top 80%" }
     });
 
@@ -103,8 +103,8 @@ const AppController = {
     });
 
     // ── SALON CARDS stagger ──
-    gsap.from(".salon-card", {
-      y: 80, opacity: 0, duration: 1, stagger: 0.15, ease: "back.out(1.4)",
+    gsap.fromTo(".salon-card", { y: 80, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: "back.out(1.4)",
       scrollTrigger: { trigger: "#salones .grid", start: "top 80%" }
     });
 
@@ -119,8 +119,8 @@ const AppController = {
     });
 
     // ── ACTIVIDADES: scale in ──
-    gsap.from(".flip-container", {
-      scale: 0.92, y: 40, opacity: 0, duration: 0.9, stagger: 0.2, ease: "power2.out",
+    gsap.fromTo(".flip-container", { scale: 0.92, y: 40, opacity: 0 }, {
+      scale: 1, y: 0, opacity: 1, duration: 0.9, stagger: 0.2, ease: "power2.out",
       scrollTrigger: { trigger: "#actividades", start: "top 80%" }
     });
 
