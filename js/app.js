@@ -37,8 +37,13 @@ const AppController = {
   setupNavbarBehavior() {
     const navbar = document.getElementById("navbar");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 60) navbar.classList.add("nav-scrolled");
-      else navbar.classList.remove("nav-scrolled");
+      if (window.scrollY > 60) {
+        navbar.classList.add("nav-scrolled", "text-brand-text", "py-4");
+        navbar.classList.remove("text-white", "py-6");
+      } else {
+        navbar.classList.remove("nav-scrolled", "text-brand-text", "py-4");
+        navbar.classList.add("text-white", "py-6");
+      }
     });
   },
 

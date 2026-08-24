@@ -41,11 +41,11 @@
 <body class="overflow-x-hidden bg-brand-bg text-brand-text selection:bg-brand-accent selection:text-brand-bg">
 
   <!-- NAVBAR -->
-  <nav id="navbar" class="fixed w-full top-0 z-40 transition-all duration-500 py-6">
+  <nav id="navbar" class="fixed w-full top-0 z-40 transition-all duration-500 py-6 text-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
       <a href="#hero" class="flex flex-col">
         <span class="font-serif text-2xl tracking-widest leading-none">DON ANDRÉS</span>
-        <span class="font-sans text-[8px] uppercase tracking-[0.3em] text-brand-text/60 mt-1">Chacra & Eventos</span>
+        <span class="font-sans text-[8px] uppercase tracking-[0.3em] opacity-80 mt-1">Chacra & Eventos</span>
       </a>
 
       <div class="hidden lg:flex items-center gap-10 text-[10px] uppercase tracking-[0.15em]">
@@ -55,18 +55,18 @@
       </div>
 
       <div class="hidden sm:block">
-        <a href="https://wa.me/59892504871?text=Hola,%20quisiera%20recibir%20asesoramiento%20sobre%20eventos" target="_blank" class="text-[10px] uppercase tracking-[0.15em] border-b border-brand-text pb-1 hover:text-brand-accent hover:border-brand-accent transition-all">
+        <a href="https://wa.me/59892504871?text=Hola,%20quisiera%20recibir%20asesoramiento%20sobre%20eventos" target="_blank" class="text-[10px] uppercase tracking-[0.15em] border-b border-current pb-1 hover:text-brand-accent hover:border-brand-accent transition-all">
           Contactar Asesor
         </a>
       </div>
       
-      <button id="menuToggle" class="lg:hidden text-brand-text" aria-label="Menú">
+      <button id="menuToggle" class="lg:hidden" aria-label="Menú">
         <i class="fa-solid fa-bars text-xl"></i>
       </button>
     </div>
     
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-brand-bg border-b border-brand-border py-8 px-6 flex flex-col gap-6 text-sm uppercase tracking-[0.15em] text-center">
+    <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-brand-bg text-brand-text border-b border-brand-border py-8 px-6 flex flex-col gap-6 text-sm uppercase tracking-[0.15em] text-center">
       <a href="#tour360" onclick="AppController.closeMobileMenu()">Tour Virtual</a>
       <a href="#galeria" onclick="AppController.closeMobileMenu()">Galería</a>
       <a href="#cotizador" onclick="AppController.closeMobileMenu()">Cotizador</a>
@@ -185,7 +185,7 @@
       <div class="text-center mb-20 fade-up-slow">
         <h2 class="font-serif text-4xl md:text-5xl mb-6">Archivo Visual</h2>
         <div class="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-[0.15em]" id="galleryFilters">
-          <button class="filter-btn active border-b border-brand-text pb-1" data-filter="all">Selección</button>
+          <button class="filter-btn active border-b border-current pb-1" data-filter="all">Selección</button>
           <button class="filter-btn text-brand-text/50 hover:text-brand-text pb-1" data-filter="bodas">Bodas</button>
           <button class="filter-btn text-brand-text/50 hover:text-brand-text pb-1" data-filter="15anos">15 Años</button>
           <button class="filter-btn text-brand-text/50 hover:text-brand-text pb-1" data-filter="parque">Entorno</button>
