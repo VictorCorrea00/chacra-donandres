@@ -38,6 +38,36 @@ const AppController = {
         } 
       });
     });
+
+    // ── SALONES: Stagger de header ──
+    gsap.from(".gsap-stagger-salones > *", {
+      y: 50, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out",
+      scrollTrigger: { trigger: "#salones", start: "top 80%" }
+    });
+
+    // ── SALONES: Cards Fade Up ──
+    gsap.from(".salon-card", {
+      y: 70, opacity: 0, duration: 1, stagger: 0.15, ease: "back.out(1.7)",
+      scrollTrigger: { trigger: "#salones .grid", start: "top 85%" }
+    });
+
+    // ── GRANJA: Parallax Individual ──
+    document.querySelectorAll('.img-parallax').forEach(img => {
+      const speed = parseFloat(img.getAttribute('data-speed')) || 1;
+      gsap.fromTo(img,
+        { y: 40 * speed },
+        { y: -40 * speed, ease: "none",
+          scrollTrigger: { trigger: "#granja", start: "top bottom", end: "bottom top", scrub: true }
+        }
+      );
+    });
+
+    // ── ACTIVIDADES: Scale In ──
+    gsap.from(".actividad-card", {
+      scale: 0.92, y: 40, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power2.out",
+      scrollTrigger: { trigger: "#actividades", start: "top 80%" }
+    });
+
   },
 
   

@@ -72,9 +72,12 @@
 
 
   <!-- Mobile Topbar -->
-  <header class="lg:hidden fixed w-full top-0 z-50 bg-white border-b border-brand-border flex justify-between items-center p-6">
-     <span class="font-serif text-2xl tracking-widest text-brand-text">DON ANDRÉS</span>
-     <button id="menuToggle" class="text-brand-text text-2xl"><i class="fa-solid fa-bars"></i></button>
+  <header class="lg:hidden fixed w-full top-0 z-50 bg-[#4B5736] border-b border-[#E08A3C]/30 flex justify-between items-center px-6 py-4">
+     <div class="flex flex-col leading-none">
+       <span class="text-[8px] uppercase tracking-[0.35em] text-[#E08A3C] font-bold">Chacra</span>
+       <span class="font-sans text-xl tracking-widest text-white font-bold">DON ANDRÉS</span>
+     </div>
+     <button id="menuToggle" class="text-white text-2xl"><i class="fa-solid fa-bars"></i></button>
   </header>
 
   <!-- Mobile Menu Drawer -->
@@ -87,31 +90,39 @@
   </div>
 
   <!-- Desktop Sidebar -->
-  <aside class="hidden lg:flex fixed left-0 top-0 w-64 h-screen bg-white flex-col items-center py-16 px-8 z-50 border-r border-brand-border shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
-    <!-- Logo -->
-    <a href="#hero" class="text-center mb-24">
-      <h1 class="font-serif text-3xl tracking-wide leading-none text-brand-text">DON ANDRÉS</h1>
-      <span class="block text-[8px] uppercase tracking-[0.4em] gretna-accent font-bold mt-3">Chacra & Eventos</span>
-    </a>
-    
-    <!-- Menu -->
-    <nav class="flex flex-col gap-8 text-center text-[9px] uppercase tracking-[0.25em] w-full font-bold text-brand-text/70">
-      <a href="#hero" class="gretna-hover transition-colors">Inicio</a>
-      <a href="#tour360" class="gretna-hover transition-colors">Tour 360</a>
-      <a href="#espacios" class="gretna-hover transition-colors">Espacios</a>
-      <a href="#galeria" class="gretna-hover transition-colors">Galería</a>
-      <a href="#testimonios" class="gretna-hover transition-colors">Testimonios</a>
-      <a href="#cotizador" class="gretna-hover transition-colors">Contacto</a>
-    </nav>
-    
-    <div class="mt-auto flex gap-6 text-brand-text/50">
-       <a href="https://instagram.com/chacradonandres" target="_blank" class="gretna-hover transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
-       <a href="https://wa.me/59892504871" target="_blank" class="gretna-hover transition-colors"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+  <aside class="hidden lg:flex fixed left-0 top-0 w-64 h-screen bg-[#4B5736] flex-col items-center py-16 px-8 z-50 border-r border-[#E08A3C]/20 shadow-[4px_0_24px_rgba(0,0,0,0.3)]">
+  <!-- Logo -->
+  <a href="#hero" class="text-center mb-16 group relative">
+    <div class="relative bg-[#3a442a] border-2 border-[#E08A3C] px-5 py-4 shadow-lg transform transition-transform group-hover:scale-105">
+      <p class="font-sans text-[10px] uppercase tracking-[0.4em] text-[#E08A3C] font-bold mb-1">Chacra</p>
+      <h1 class="font-sans text-2xl tracking-widest leading-none text-white font-bold">Don Andrés</h1>
     </div>
-  </aside>
+    <span class="block text-[9px] uppercase tracking-[0.35em] text-white/50 font-semibold mt-4">Naturaleza & Eventos</span>
+  </a>
+  
+  <nav class="flex flex-col gap-7 text-center text-[10px] uppercase tracking-[0.25em] w-full font-bold text-white/70">
+    <a href="#hero"        class="hover:text-[#E08A3C] transition-colors">Inicio</a>
+    <a href="#salones"     class="hover:text-[#E08A3C] transition-colors">Salones</a>
+    <a href="#granja"      class="hover:text-[#E08A3C] transition-colors">Granja</a>
+    <a href="#actividades" class="hover:text-[#E08A3C] transition-colors">Actividades</a>
+    <a href="#tour360"     class="hover:text-[#E08A3C] transition-colors">Tour 360</a>
+    <a href="#galeria"     class="hover:text-[#E08A3C] transition-colors">Galería</a>
+    <a href="#cotizador"   class="hover:text-[#E08A3C] transition-colors">Contacto</a>
+  </nav>
+  
+  <div class="mt-auto flex flex-col items-center gap-4">
+    <a href="https://wa.me/59892504871" target="_blank" class="w-full flex items-center justify-center gap-3 bg-[#E08A3C] text-white text-[10px] uppercase tracking-widest font-bold px-4 py-3 hover:bg-white hover:text-[#4B5736] transition-colors">
+      <i class="fa-brands fa-whatsapp text-lg"></i> Consultar
+    </a>
+    <div class="flex gap-5 text-[#E08A3C] mt-2">
+      <a href="https://instagram.com/chacradonandres" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+      <a href="https://wa.me/59892504871" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+    </div>
+  </div>
+</aside>
 
   <!-- Main Content Area -->
-  <main class="w-full lg:ml-64 lg:w-[calc(100%-16rem)] mt-[77px] lg:mt-0 bg-brand-bg">
+  <main class="w-full lg:ml-64 lg:w-[calc(100%-16rem)] mt-[77px] lg:mt-0 bg-[#F5F0E8]">
 
      <!-- 1. HERO (Editorial Asimétrico) -->
      <section id="hero" class="relative w-full h-[85vh] lg:h-screen bg-slate-950 flex flex-col justify-end p-6 lg:p-24 fade-up-slow overflow-hidden">
@@ -208,6 +219,125 @@
              </div>
            </div>
         </div>
+     </section>
+
+
+     <!-- ── SALONES DE FIESTA ── -->
+     <section id="salones" class="relative w-full py-24 lg:py-32 px-6 lg:px-16 bg-[#4B5736] text-white fade-up-slow">
+       <div class="max-w-7xl mx-auto">
+         <div class="mb-16 gsap-stagger-salones">
+           <span class="text-[#E08A3C] text-[10px] uppercase tracking-[0.4em] font-bold mb-4 block">Para tu Fiesta o Evento</span>
+           <h2 class="font-sans font-bold text-5xl lg:text-7xl mb-6">Salones de fiesta</h2>
+           <p class="max-w-2xl text-white/70 text-lg font-light leading-relaxed">En Chacra Don Andrés contás con varias opciones para tu evento, incluyendo un gran salón para 300 personas con todos los servicios.</p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+           <div class="salon-card relative rounded-2xl bg-white/10 backdrop-blur-sm overflow-hidden group cursor-pointer border border-white/10 hover:border-[#E08A3C]/50 transition-colors duration-500">
+             <div class="h-56 overflow-hidden">
+               <img src="assets/img/salon-principal.webp" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" alt="Salón Principal">
+             </div>
+             <div class="p-8 relative">
+               <div class="absolute -top-8 right-6 text-7xl font-bold text-white/10">01</div>
+               <h3 class="text-2xl font-bold mb-2 text-[#E08A3C]">Salón Principal</h3>
+               <p class="text-sm text-white/80 mb-4">Un gran salón preparado para eventos de hasta 300 personas, con todos los servicios necesarios.</p>
+               <a href="#cotizador" class="inline-block text-[#E08A3C] text-xs font-bold uppercase tracking-widest border-b border-[#E08A3C]/40 pb-0.5 hover:text-white hover:border-white transition-colors">Consultar →</a>
+             </div>
+           </div>
+           <div class="salon-card relative rounded-2xl bg-white/10 backdrop-blur-sm overflow-hidden group cursor-pointer border border-white/10 hover:border-[#E08A3C]/50 transition-colors duration-500">
+             <div class="h-56 overflow-hidden">
+               <img src="assets/img/salon-horno.webp" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" alt="Salón El Horno">
+             </div>
+             <div class="p-8 relative">
+               <div class="absolute -top-8 right-6 text-7xl font-bold text-white/10">02</div>
+               <h3 class="text-2xl font-bold mb-2 text-[#E08A3C]">Salón "El Horno"</h3>
+               <p class="text-sm text-white/80 mb-4">Un espacio cálido y versátil para celebraciones más íntimas y encuentros especiales.</p>
+               <a href="#cotizador" class="inline-block text-[#E08A3C] text-xs font-bold uppercase tracking-widest border-b border-[#E08A3C]/40 pb-0.5 hover:text-white hover:border-white transition-colors">Consultar →</a>
+             </div>
+           </div>
+           <div class="salon-card relative rounded-2xl bg-white/10 backdrop-blur-sm overflow-hidden group cursor-pointer border border-white/10 hover:border-[#E08A3C]/50 transition-colors duration-500">
+             <div class="h-56 overflow-hidden">
+               <img src="assets/img/patio.webp" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" alt="Salón Quincho">
+             </div>
+             <div class="p-8 relative">
+               <div class="absolute -top-8 right-6 text-7xl font-bold text-white/10">03</div>
+               <h3 class="text-2xl font-bold mb-2 text-[#E08A3C]">Salón "Quincho"</h3>
+               <p class="text-sm text-white/80 mb-4">Ideal para reuniones distendidas, actividades grupales y eventos con espíritu de chacra.</p>
+               <a href="#cotizador" class="inline-block text-[#E08A3C] text-xs font-bold uppercase tracking-widest border-b border-[#E08A3C]/40 pb-0.5 hover:text-white hover:border-white transition-colors">Consultar →</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+
+     <!-- ── GRANJA ── -->
+     <section id="granja" class="w-full flex flex-col lg:flex-row overflow-hidden fade-up-slow">
+       <div class="w-full lg:w-5/12 bg-[#E08A3C] p-12 lg:p-20 flex flex-col justify-center text-[#4B5736]">
+         <span class="text-[10px] uppercase tracking-[0.4em] font-bold mb-6 opacity-70">Granja</span>
+         <h2 class="font-sans font-bold text-4xl lg:text-6xl mb-6 leading-tight">Conocé nuestra granja junto a nosotros</h2>
+         <p class="font-medium mb-10 text-lg opacity-90 leading-relaxed">Animales, naturaleza y momentos para compartir de cerca.</p>
+         <a href="#cotizador" class="self-start border-2 border-[#4B5736] text-[#4B5736] px-8 py-4 uppercase tracking-widest font-bold text-xs hover:bg-[#4B5736] hover:text-[#F5F0E8] transition-colors rounded-full">¿Qué podemos ver? →</a>
+       </div>
+       <div class="w-full lg:w-7/12 bg-[#F5F0E8] py-16 px-8 lg:px-12 flex items-center justify-center gap-4 lg:gap-6 min-h-[50vh] lg:min-h-[70vh]">
+         <div class="w-1/3 h-72 lg:h-96 rounded-2xl overflow-hidden shadow-xl img-parallax" data-speed="0.8">
+           <img src="assets/img/LLAMA01.webp" loading="lazy" class="w-full h-full object-cover" alt="Llama">
+         </div>
+         <div class="w-1/3 h-80 lg:h-[420px] rounded-2xl overflow-hidden shadow-2xl img-parallax mt-10" data-speed="1.2">
+           <img src="assets/img/OVEJA02.webp" loading="lazy" class="w-full h-full object-cover" alt="Oveja">
+         </div>
+         <div class="w-1/3 h-64 lg:h-80 rounded-2xl overflow-hidden shadow-xl img-parallax -mt-10" data-speed="0.5">
+           <img src="assets/img/PAVO.webp" loading="lazy" class="w-full h-full object-cover" alt="Pavo Real">
+         </div>
+       </div>
+     </section>
+
+     <!-- ── ACTIVIDADES & SERVICIOS ── -->
+     <section id="actividades" class="w-full py-24 lg:py-32 px-6 lg:px-16 bg-white text-[#4B5736] fade-up-slow">
+       <div class="max-w-7xl mx-auto">
+         <div class="text-center mb-16">
+           <span class="text-[#E08A3C] text-[10px] uppercase tracking-[0.4em] font-bold mb-4 block">Lo que ofrecemos</span>
+           <h2 class="font-sans font-bold text-5xl lg:text-6xl">Actividades & Servicios</h2>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+           <div class="actividad-card bg-[#F5F0E8] rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500 relative">
+             <div class="h-56 relative overflow-hidden">
+               <img src="assets/img/piscina-Don-Andres.webp" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Piscina">
+               <div class="absolute inset-0 bg-[#4B5736]/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6">
+                 <a href="#cotizador" class="text-white font-bold tracking-widest uppercase text-xs border border-white px-6 py-3 rounded-full hover:bg-white hover:text-[#4B5736] transition-colors text-center">Consultar disponibilidad →</a>
+               </div>
+             </div>
+             <div class="p-8">
+               <span class="text-[#E08A3C] text-[9px] uppercase tracking-[0.3em] font-bold mb-3 block">Piscina</span>
+               <h4 class="font-bold text-xl mb-3 text-[#4B5736]">Piscina techada y climatizada</h4>
+               <p class="text-sm opacity-70 leading-relaxed">Ideal para disfrutar durante todo el año, con comodidad y seguridad.</p>
+             </div>
+           </div>
+           <div class="actividad-card bg-[#F5F0E8] rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500 relative">
+             <div class="h-56 relative overflow-hidden">
+               <img src="assets/img/JUEGOS004-1.webp" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Tirolesa">
+               <div class="absolute inset-0 bg-[#4B5736]/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6">
+                 <a href="#cotizador" class="text-white font-bold tracking-widest uppercase text-xs border border-white px-6 py-3 rounded-full hover:bg-white hover:text-[#4B5736] transition-colors text-center">Consultar disponibilidad →</a>
+               </div>
+             </div>
+             <div class="p-8">
+               <span class="text-[#E08A3C] text-[9px] uppercase tracking-[0.3em] font-bold mb-3 block">Actividades</span>
+               <h4 class="font-bold text-xl mb-3 text-[#4B5736]">Tirolesa y juegos al aire libre</h4>
+               <p class="text-sm opacity-70 leading-relaxed">Propuestas pensadas para niños, grupos, instituciones y familias.</p>
+             </div>
+           </div>
+           <div class="actividad-card bg-[#F5F0E8] rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500 relative">
+             <div class="h-56 relative overflow-hidden">
+               <img src="assets/img/carreta30.webp" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Paseos">
+               <div class="absolute inset-0 bg-[#4B5736]/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6">
+                 <a href="#cotizador" class="text-white font-bold tracking-widest uppercase text-xs border border-white px-6 py-3 rounded-full hover:bg-white hover:text-[#4B5736] transition-colors text-center">Consultar disponibilidad →</a>
+               </div>
+             </div>
+             <div class="p-8">
+               <span class="text-[#E08A3C] text-[9px] uppercase tracking-[0.3em] font-bold mb-3 block">Paseos</span>
+               <h4 class="font-bold text-xl mb-3 text-[#4B5736]">Paseos para escuelas y grupos</h4>
+               <p class="text-sm opacity-70 leading-relaxed">Un entorno natural para aprender, compartir y vivir una jornada diferente.</p>
+             </div>
+           </div>
+         </div>
+       </div>
      </section>
 
      <!-- 3. TOUR 360 / EXPERIENCIA INMERSIVA -->
