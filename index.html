@@ -112,72 +112,118 @@
 
   <!-- Main Content Area -->
   <main class="w-full lg:ml-64 lg:w-[calc(100%-16rem)] mt-[77px] lg:mt-0 bg-brand-bg">
-     
-     <!-- 1. HERO (Image + Center text) -->
-     <section id="hero" class="relative w-full h-[90vh] lg:h-screen bg-slate-950 flex items-center justify-center fade-up-slow">
-        <img src="assets/img/boda.webp" alt="Evento al aire libre en Chacra Don Andrés" fetchpriority="high" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.5] contrast-125 parallax-img scale-110" />
-        <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-6">
-           <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal tracking-wide mb-6 drop-shadow-lg split-text-hero overflow-hidden block">El Mejor Entorno</h2>
-           <p class="text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-light mb-12 max-w-lg mx-auto opacity-80">Bodas, 15 Años y Eventos Infantiles en Las Piedras</p>
-           <a href="#tour360" class="magnetic-btn bg-white/5 backdrop-blur-md border border-white/40 text-white px-10 py-4 text-[9px] uppercase tracking-[0.25em] font-bold hover:bg-white hover:text-black transition-all">Explorar Espacios</a>
+
+     <!-- 1. HERO (Editorial Asimétrico) -->
+     <section id="hero" class="relative w-full h-[90vh] lg:h-screen bg-slate-950 flex flex-col justify-end p-8 lg:p-24 fade-up-slow overflow-hidden">
+        <img src="assets/img/boda.webp" alt="Evento al aire libre en Chacra Don Andrés" fetchpriority="high" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.5] contrast-125 parallax-img scale-110 origin-bottom" />
+        
+        <!-- Gradientes para legibilidad premium -->
+        <div class="absolute inset-0 z-10 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/80 via-transparent to-transparent"></div>
+
+        <div class="relative z-20 w-full flex flex-col lg:flex-row justify-between items-end gap-12">
+           <div class="max-w-4xl">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-[1px] bg-brand-accent"></div>
+                <span class="text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-brand-accent font-bold">Las Piedras, Montevideo</span>
+              </div>
+              <h2 class="font-serif text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] font-normal tracking-tight mb-8 text-white drop-shadow-2xl split-text-hero overflow-hidden block">
+                El Mejor<br/><span class="italic gretna-accent pr-4">Entorno</span>
+              </h2>
+           </div>
+           
+           <div class="flex flex-col items-start lg:items-end text-left lg:text-right gap-6 mb-4">
+              <p class="text-[10px] uppercase tracking-[0.3em] font-light text-white/70 max-w-[250px] leading-relaxed">
+                Bodas, 15 Años y Fiestas Infantiles rodeados de naturaleza.
+              </p>
+              <a href="#tour360" class="magnetic-btn bg-brand-accent/90 backdrop-blur-md text-brand-bg px-10 py-5 text-[9px] uppercase tracking-[0.25em] font-bold hover:bg-white hover:text-brand-text transition-all rounded-sm flex items-center gap-3">
+                Explorar Chacra <i class="fa-solid fa-arrow-down"></i>
+              </a>
+           </div>
         </div>
      </section>
 
-     <!-- 2. TOUR 360 / SING & DANCE SPLIT -->
+     <!-- 2. ATRACTIVOS (Grid asimétrico con FOTOS REALES) -->
+     <section id="espacios" class="w-full py-24 lg:py-32 px-8 lg:px-16 bg-brand-bg fade-up-slow border-b border-brand-border/30">
+        <div class="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+           <div>
+              <p class="text-[9px] uppercase tracking-[0.4em] text-brand-accent font-bold mb-4">Descubre el Lugar</p>
+              <h3 class="font-serif text-4xl lg:text-6xl text-brand-text">Nuestros Atractivos</h3>
+           </div>
+           <p class="text-sm font-light text-brand-text/60 max-w-sm leading-relaxed">
+              Infraestructura diseñada para sorprender en cada rincón, desde elegantes salones hasta naturaleza viva.
+           </p>
+        </div>
+        
+        <!-- Bento Grid Editorial -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 auto-rows-[350px]">
+           <!-- Salón Principal (Grande Izquierda) -->
+           <div class="md:col-span-8 relative group overflow-hidden bg-slate-900 rounded-sm">
+             <img src="assets/img/salon-principal.webp" alt="Salón Principal Climatizado" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out" />
+             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-8 left-8 z-10">
+                <span class="text-[9px] uppercase tracking-[0.3em] text-brand-accent font-bold mb-2 block">Capacidad +150 Inv.</span>
+                <h4 class="font-serif text-3xl text-white">Salón Climatizado</h4>
+             </div>
+           </div>
+           
+           <!-- Piscina (Vertical Derecha) -->
+           <div class="md:col-span-4 relative group overflow-hidden bg-slate-900 rounded-sm">
+             <img src="assets/img/piscina-Don-Andres.webp" alt="Piscina Techada" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out" />
+             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-8 left-8 z-10">
+                <span class="text-[9px] uppercase tracking-[0.3em] text-brand-accent font-bold mb-2 block">Todo el año</span>
+                <h4 class="font-serif text-2xl text-white">Piscina Techada</h4>
+             </div>
+           </div>
+
+           <!-- Granja Interactiva (Horizontal Abajo Izq) -->
+           <div class="md:col-span-5 relative group overflow-hidden bg-slate-900 rounded-sm">
+             <img src="assets/img/LLAMA01.webp" alt="Granja Interactiva" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out" />
+             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-8 left-8 z-10">
+                <span class="text-[9px] uppercase tracking-[0.3em] text-brand-accent font-bold mb-2 block">Contacto Animal</span>
+                <h4 class="font-serif text-2xl text-white">Granja & Llamas</h4>
+             </div>
+           </div>
+
+           <!-- El Horno (Horizontal Abajo Der) -->
+           <div class="md:col-span-7 relative group overflow-hidden bg-slate-900 rounded-sm">
+             <img src="assets/img/salon-horno.webp" alt="Salón El Horno" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out" />
+             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-8 left-8 z-10">
+                <span class="text-[9px] uppercase tracking-[0.3em] text-brand-accent font-bold mb-2 block">Estilo Rústico</span>
+                <h4 class="font-serif text-2xl text-white">Parrillero El Horno</h4>
+             </div>
+           </div>
+        </div>
+     </section>
+
+     <!-- 3. TOUR 360 / EXPERIENCIA INMERSIVA -->
      <section id="tour360" class="w-full py-24 lg:py-32 px-8 lg:px-24 bg-white flex flex-col lg:flex-row items-center gap-16 lg:gap-24 fade-up-slow">
         <!-- 360 iframe (Left) -->
         <div class="w-full lg:w-1/2 relative">
-           <div class="w-full aspect-[4/3] bg-brand-bg relative overflow-hidden shadow-2xl">
+           <div class="w-full aspect-[4/3] bg-brand-bg relative overflow-hidden rounded-sm shadow-2xl border border-brand-border/20">
                <iframe id="tourIframe" src="https://casas.virtualprop360.uy/tours/avNLpjngi?sceneId=k2sntmWaUa7" class="absolute inset-0 w-full h-full border-0"></iframe>
            </div>
         </div>
         <!-- Right text -->
         <div class="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start">
-           <h3 class="font-serif text-4xl lg:text-5xl mb-6 text-brand-text">Experiencia 360</h3>
-           <div class="w-12 h-[1px] bg-brand-text/20 mb-8"></div>
-           <p class="text-sm font-light text-brand-text/70 leading-relaxed mb-10 max-w-md">Recorre nuestras instalaciones de manera interactiva. Salones climatizados, entorno natural, granja y espacios versátiles listos para adaptarse a tu próximo evento.</p>
+           <h3 class="font-serif text-4xl lg:text-5xl mb-6 text-brand-text">Paseo Virtual 360</h3>
+           <div class="w-12 h-[1px] bg-brand-accent mb-8"></div>
+           <p class="text-sm font-light text-brand-text/70 leading-relaxed mb-10 max-w-md">Navega interactivamente por nuestros rincones. Desde la pista de baile equipada hasta la carreta histórica en el patio. Tú tienes el control.</p>
            
            <!-- Scene Buttons injected here -->
            <div id="sceneList" class="flex flex-wrap gap-2 justify-center lg:justify-start"></div>
         </div>
      </section>
 
-     <!-- 3. BANNER (Now & Forever) -->
-     <section class="relative w-full h-[60vh] lg:h-[70vh] bg-slate-900 fade-up-slow">
-        <img src="assets/img/pista-baile.webp" alt="Pista de baile equipada" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.4]" />
+     <!-- 4. BANNER (Now & Forever) - Foto de Pista de Baile -->
+     <section class="relative w-full h-[50vh] lg:h-[60vh] bg-slate-900 fade-up-slow overflow-hidden">
+        <img src="assets/img/pista-baile.webp" alt="Pista de baile equipada" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] parallax-img" />
         <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-6">
-           <h3 class="font-serif text-4xl md:text-5xl lg:text-7xl mb-6">Momentos Únicos</h3>
-           <p class="text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-light max-w-xl leading-relaxed mx-auto opacity-70">Atención personalizada, espacios equipados y detalles impecables.</p>
-        </div>
-     </section>
-
-     <!-- 4. ESPACIOS GRID (Best Wedding Places) -->
-     <section id="espacios" class="w-full py-24 lg:py-32 px-8 lg:px-16 bg-brand-bg text-center fade-up-slow">
-        <h3 class="font-serif text-4xl lg:text-5xl mb-4 text-brand-text">Nuestros Espacios</h3>
-        <p class="text-[9px] uppercase tracking-[0.3em] text-brand-text/50 mb-16">Infraestructura Premium</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-           <div class="group">
-             <div class="relative overflow-hidden mb-6 aspect-[4/3]">
-               <img src="assets/img/salon-principal.webp" alt="Salón Principal Climatizado" loading="lazy" decoding="async" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
-             </div>
-             <h4 class="font-serif text-2xl mb-3 text-brand-text">Salón Principal</h4>
-             <p class="text-[9px] uppercase tracking-[0.2em] gretna-accent font-bold">Climatizado · +150 Inv</p>
-           </div>
-           <div class="group">
-             <div class="relative overflow-hidden mb-6 aspect-[4/3]">
-               <img src="assets/img/salon-horno.webp" alt="El Horno Rústico" loading="lazy" decoding="async" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
-             </div>
-             <h4 class="font-serif text-2xl mb-3 text-brand-text">El Horno</h4>
-             <p class="text-[9px] uppercase tracking-[0.2em] gretna-accent font-bold">Rústico · Parrillero</p>
-           </div>
-           <div class="group">
-             <div class="relative overflow-hidden mb-6 aspect-[4/3]">
-               <img src="assets/img/parque.webp" alt="Parque Abierto" loading="lazy" decoding="async" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
-             </div>
-             <h4 class="font-serif text-2xl mb-3 text-brand-text">Parque y Piscina</h4>
-             <p class="text-[9px] uppercase tracking-[0.2em] gretna-accent font-bold">Ceremonias · Granja</p>
-           </div>
+           <h3 class="font-serif text-4xl md:text-5xl lg:text-7xl mb-6 drop-shadow-lg">La Pista de tus Sueños</h3>
+           <p class="text-[9px] md:text-[10px] uppercase tracking-[0.4em] font-light max-w-xl leading-relaxed mx-auto opacity-70">Iluminación robótica y sonido premium instalados.</p>
         </div>
      </section>
 
@@ -185,25 +231,25 @@
      <section id="galeria" class="w-full py-24 px-8 lg:px-16 bg-white fade-up-slow">
         <h3 class="font-serif text-4xl text-center mb-10 text-brand-text">Galería Visual</h3>
         <div class="flex flex-wrap items-center justify-center gap-6 mb-12" id="galleryFilters">
-          <button data-filter="all" class="filter-btn text-[10px] uppercase tracking-widest font-bold border-b border-brand-text text-brand-text pb-1 transition-all active">Todo</button>
-          <button data-filter="bodas" class="filter-btn text-[10px] uppercase tracking-widest text-brand-text/50 pb-1 transition-all">Bodas</button>
-          <button data-filter="15anos" class="filter-btn text-[10px] uppercase tracking-widest text-brand-text/50 pb-1 transition-all">15 Años</button>
-          <button data-filter="salones" class="filter-btn text-[10px] uppercase tracking-widest text-brand-text/50 pb-1 transition-all">Salones</button>
-          <button data-filter="parque" class="filter-btn text-[10px] uppercase tracking-widest text-brand-text/50 pb-1 transition-all">Exteriores</button>
+          <button data-filter="all" class="filter-btn text-[9px] uppercase tracking-[0.3em] font-bold border-b border-brand-text text-brand-text pb-1 transition-all active">Todo</button>
+          <button data-filter="bodas" class="filter-btn text-[9px] uppercase tracking-[0.3em] text-brand-text/50 hover:text-brand-text pb-1 transition-all">Bodas</button>
+          <button data-filter="15anos" class="filter-btn text-[9px] uppercase tracking-[0.3em] text-brand-text/50 hover:text-brand-text pb-1 transition-all">15 Años</button>
+          <button data-filter="salones" class="filter-btn text-[9px] uppercase tracking-[0.3em] text-brand-text/50 hover:text-brand-text pb-1 transition-all">Salones</button>
+          <button data-filter="parque" class="filter-btn text-[9px] uppercase tracking-[0.3em] text-brand-text/50 hover:text-brand-text pb-1 transition-all">Exteriores</button>
         </div>
         <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6" id="galleryGrid">
           <!-- JS fills this -->
         </div>
      </section>
 
-     <!-- 6. QUOTE (Best Friends Forever) -->
-     <section id="testimonios" class="relative w-full h-[60vh] bg-slate-900 fade-up-slow">
-        <img src="assets/img/parque.webp" alt="Entorno natural de la chacra" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.35]" />
+     <!-- 6. TESTIMONIOS QUOTE (Usando PATIO en lugar de Parque duplicado) -->
+     <section id="testimonios" class="relative w-full h-[60vh] bg-slate-900 fade-up-slow overflow-hidden">
+        <img src="assets/img/patio.webp" alt="Patio Histórico" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.25] parallax-img" />
         <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-8">
-           <i class="fa-solid fa-quote-right text-2xl lg:text-3xl opacity-30 mb-8"></i>
-           <h3 class="font-serif text-2xl lg:text-4xl italic mb-10 max-w-4xl leading-relaxed">"Un entorno natural precioso y súper cuidado. Usamos el salón climatizado y el parque para nuestra ceremonia. El servicio fue impecable."</h3>
-           <div class="w-6 h-[1px] bg-white/30 mb-4"></div>
-           <p class="text-[9px] uppercase tracking-[0.3em] font-bold">Gonzalo P. - Boda al aire libre</p>
+           <i class="fa-solid fa-quote-right text-2xl lg:text-3xl text-brand-accent mb-8"></i>
+           <h3 class="font-serif text-3xl lg:text-4xl italic mb-10 max-w-4xl leading-relaxed font-light">"Un entorno natural precioso y súper cuidado. La atención personalizada hizo que nuestra ceremonia fuera perfecta. El servicio fue impecable."</h3>
+           <div class="w-12 h-[1px] bg-brand-accent/50 mb-6"></div>
+           <p class="text-[9px] uppercase tracking-[0.3em] font-bold text-brand-accent">Gonzalo P. <span class="text-white/50 font-normal">/ Reseña Google</span></p>
         </div>
      </section>
 
@@ -211,18 +257,31 @@
      <section id="cotizador" class="w-full py-24 lg:py-32 px-8 lg:px-24 bg-brand-bg flex flex-col lg:flex-row gap-16 items-start fade-up-slow">
          <div class="w-full lg:w-1/3 text-center lg:text-left">
             <h3 class="font-serif text-4xl mb-6 text-brand-text">Contáctanos</h3>
-            <p class="text-sm font-light text-brand-text/60 mb-10">Agenda tu visita, solicita tu presupuesto a medida y hablemos sobre cómo hacer tu evento realidad.</p>
+            <p class="text-sm font-light text-brand-text/60 mb-10">Agenda tu visita presencial o solicita tu presupuesto detallado online.</p>
             
-            <div class="space-y-6 text-[10px] uppercase tracking-widest text-brand-text font-bold">
-               <a href="https://wa.me/59892504871" target="_blank" class="block gretna-hover"><i class="fa-brands fa-whatsapp gretna-accent text-sm w-6"></i> +598 92 504 871</a>
-               <p><i class="fa-solid fa-phone gretna-accent text-sm w-6"></i> 2366 3470</p>
-               <p><i class="fa-solid fa-location-dot gretna-accent text-sm w-6"></i> Cno. Monte Sosa 6610</p>
-               <p><i class="fa-regular fa-envelope gretna-accent text-sm w-6"></i> Contacto@chacradonandres.com.uy</p>
+            <div class="space-y-6 text-[10px] uppercase tracking-[0.2em] text-brand-text font-bold">
+               <a href="https://wa.me/59892504871" target="_blank" class="block gretna-hover flex items-center justify-center lg:justify-start gap-4">
+                  <span class="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-brand-accent"><i class="fa-brands fa-whatsapp text-lg"></i></span> 
+                  +598 92 504 871
+               </a>
+               <div class="flex items-center justify-center lg:justify-start gap-4">
+                  <span class="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-brand-accent"><i class="fa-solid fa-phone text-sm"></i></span> 
+                  2366 3470
+               </div>
+               <div class="flex items-center justify-center lg:justify-start gap-4">
+                  <span class="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-brand-accent"><i class="fa-solid fa-location-dot text-sm"></i></span> 
+                  Cno. Monte Sosa 6610
+               </div>
+               <div class="flex items-center justify-center lg:justify-start gap-4">
+                  <span class="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-brand-accent"><i class="fa-regular fa-envelope text-sm"></i></span> 
+                  Contacto@chacradonandres
+               </div>
             </div>
          </div>
          
-         <div class="w-full lg:w-2/3">
-            <form id="quoteForm" onsubmit="QuoteCalculator.handleFormSubmit(event)" class="space-y-8">
+         <div class="w-full lg:w-2/3 bg-white p-8 lg:p-12 shadow-sm border border-brand-border/30 rounded-sm relative">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-bg rounded-bl-full -z-10 opacity-50"></div>
+            <form id="quoteForm" onsubmit="QuoteCalculator.handleFormSubmit(event)" class="space-y-8 relative z-10">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label class="block text-[9px] uppercase tracking-[0.2em] mb-3 text-brand-text/50 font-bold">Nombre completo</label>
@@ -256,7 +315,7 @@
               </div>
 
               <div class="pt-4 text-center lg:text-left">
-                <button type="submit" class="bg-brand-text text-white font-bold px-10 py-4 text-[9px] uppercase tracking-[0.25em] hover:bg-[#8C6A5D] transition-colors">
+                <button type="submit" class="magnetic-btn bg-brand-text text-white font-bold px-10 py-5 text-[9px] uppercase tracking-[0.25em] hover:bg-[#8C6A5D] transition-colors rounded-sm shadow-xl">
                   Enviar Consulta
                 </button>
               </div>
@@ -265,17 +324,18 @@
      </section>
      
      <!-- FOOTER -->
-     <footer class="w-full bg-slate-950 py-16 px-8 flex flex-col items-center justify-center text-center border-t-4 gretna-border">
-        <h4 class="font-serif text-2xl text-white mb-6">Chacra Don Andrés</h4>
+     <footer class="w-full bg-slate-950 py-16 px-8 flex flex-col items-center justify-center text-center border-t-4 border-brand-accent">
+        <h4 class="font-serif text-3xl text-white mb-6">Chacra Don Andrés</h4>
         <p class="text-[9px] uppercase tracking-[0.2em] text-white/40 mb-2">Camino Monte Sosa 6610, Las Piedras</p>
         <p class="text-[9px] uppercase tracking-[0.2em] text-white/40 mb-10">&copy; 2026 Todos los derechos reservados.</p>
         <div class="flex gap-4">
-          <a href="https://instagram.com/chacradonandres" class="text-white/30 hover:text-white"><i class="fa-brands fa-instagram text-xl"></i></a>
+          <a href="https://instagram.com/chacradonandres" class="text-white/30 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
+          <a href="https://wa.me/59892504871" class="text-white/30 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
         </div>
      </footer>
   </main>
 
-  <!-- Lightbox Modal -->
+<!-- Lightbox Modal -->
   <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
     <button id="closeLightbox" class="absolute top-8 right-8 text-white/50 hover:text-white text-3xl"><i class="fa-solid fa-xmark"></i></button>
     <div class="max-w-5xl w-full px-4">
