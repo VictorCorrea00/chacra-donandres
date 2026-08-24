@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   
@@ -35,6 +35,11 @@
   <script>
     tailwind.config = {
       theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          },
         extend: {
           colors: {
             brand: {
@@ -115,7 +120,18 @@
 
      <!-- 1. HERO (Editorial Asimétrico) -->
      <section id="hero" class="relative w-full h-[90vh] lg:h-screen bg-slate-950 flex flex-col justify-end p-8 lg:p-24 fade-up-slow overflow-hidden">
-        <img src="assets/img/boda.webp" alt="Evento al aire libre en Chacra Don Andrés" fetchpriority="high" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.5] contrast-125 parallax-img scale-110 origin-bottom" />
+        <!-- Contenedor del Slider GSAP -->
+        <div id="hero-slider" class="absolute inset-0 w-full h-full overflow-hidden">
+           <div class="hero-slide absolute inset-0 w-full h-full z-0">
+              <img src="assets/img/boda.webp" alt="Boda al aire libre" fetchpriority="high" loading="eager" decoding="async" class="w-full h-full object-cover filter brightness-[0.5] contrast-125 origin-center" />
+           </div>
+           <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
+              <img src="assets/img/salon-principal.webp" alt="Salón Principal" loading="lazy" decoding="async" class="w-full h-full object-cover filter brightness-[0.5] contrast-125 origin-center" />
+           </div>
+           <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
+              <img src="assets/img/patio.webp" alt="Patio Histórico" loading="lazy" decoding="async" class="w-full h-full object-cover filter brightness-[0.5] contrast-125 origin-center" />
+           </div>
+        </div>
         
         <!-- Gradientes para legibilidad premium -->
         <div class="absolute inset-0 z-10 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90"></div>
