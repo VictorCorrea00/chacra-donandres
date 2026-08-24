@@ -7,18 +7,19 @@ const AppController = {
     this.setupMobileMenu();
 
     // Iniciar Micro-interacciones Premium
+    // Register GSAP plugins immediately
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
     this.initLenis();
     this.initPreloader();
-    
     this.initParallax();
-
     this.renderTestimonials();
 
     if (window.gsap && window.ScrollTrigger) {
       if (window.TourController) TourController.init();
-    if (window.GalleryController) GalleryController.init();
-
-    gsap.registerPlugin(ScrollTrigger);
+      if (window.GalleryController) GalleryController.init();
       this.initGsapAnimations();
     }
     if (window.WeatherWidget) WeatherWidget.init();
@@ -90,12 +91,14 @@ const AppController = {
       scrollTrigger: { trigger: "#salones", start: "top 80%" }
     });
 
-    // ── SALONES: clip-path reveal on cards ──
+    // ── SALONES: clip-path reveal on cards (fromTo so images visible if GSAP fails)
     document.querySelectorAll('.clip-reveal').forEach(el => {
-      gsap.to(el, {
-        clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power3.inOut",
-        scrollTrigger: { trigger: el, start: "top 85%" }
-      });
+      gsap.fromTo(el,
+        { clipPath: "inset(0 100% 0 0)" },
+        { clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "power3.inOut",
+          scrollTrigger: { trigger: el, start: "top 90%" }
+        }
+      );
     });
 
     // ── SALON CARDS stagger ──
@@ -106,10 +109,12 @@ const AppController = {
 
     // ── GRANJA: clip-path reveal ──
     document.querySelectorAll('.clip-reveal-target').forEach(el => {
-      gsap.to(el, {
-        clipPath: "inset(0 0% 0 0%)", duration: 1.5, ease: "power3.inOut",
-        scrollTrigger: { trigger: "#granja", start: "top 75%" }
-      });
+      gsap.fromTo(el,
+        { clipPath: "inset(0 50% 0 50%)" },
+        { clipPath: "inset(0 0% 0 0%)", duration: 1.5, ease: "power3.inOut",
+          scrollTrigger: { trigger: "#granja", start: "top 75%" }
+        }
+      );
     });
 
     // ── ACTIVIDADES: scale in ──
