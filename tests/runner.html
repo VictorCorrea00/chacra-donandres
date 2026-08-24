@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Runner - Chacra Don Andres</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/calculator.js"></script>
+  <script src="test_calculator.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 p-8 font-sans">
+  <div class="max-w-3xl mx-auto space-y-6">
+    <div class="border-b border-white/10 pb-4 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-yellow-400">🧪 Test Runner - Chacra Don Andrés</h1>
+      <span id="badge" class="px-3 py-1 bg-yellow-500/20 text-yellow-300 text-xs font-bold rounded-full">Ejecutando...</span>
+    </div>
+    <div id="results" class="space-y-3"></div>
+  </div>
+  <script>
+    const results = runCalculatorTests();
+    const container = document.getElementById('results');
+    const badge = document.getElementById('badge');
+    let allPassed = true;
+
+    container.innerHTML = results.map(r => {
+      if (!r.passed) allPassed = false;
+      return `
+        <div class="p-4 rounded-xl border ${r.passed ? 'bg-emerald-950/30 border-emerald-500/30 text-emerald-300' : 'bg-rose-950/30 border-rose-500/30 text-rose-300'} flex items-start justify-between">
+          <div>
+            <div class="font-bold text-sm">${r.passed ? '✓' : '✗'} ${r.test}</div>
+            <div class="text-xs text-slate-400 mt-1 font-mono">${r.detail}</div>
+          </div>
+          <span class="text-xs font-bold uppercase px-2 py-1 rounded ${r.passed ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'}">
+            ${r.passed ? 'PASSED' : 'FAILED'}
+          </span>
+        </div>
+      `;
+    }).join('');
+
+    badge.className = allPassed ? 'px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full' : 'px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-bold rounded-full';
+    badge.innerText = allPassed ? 'ALL TESTS PASSED (4/4)' : 'SOME TESTS FAILED';
+  </script>
+</body>
+</html>

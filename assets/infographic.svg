@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F7E7A9"/>
+      <stop offset="50%" stop-color="#CFA24B"/>
+      <stop offset="100%" stop-color="#8A6120"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="600" rx="20" fill="url(#bg)" stroke="#CFA24B" stroke-width="2" stroke-opacity="0.3"/>
+  <text x="500" y="60" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="url(#gold)">CHACRA DON ANDRÉS • MAPA DE SERVICIOS &amp; EXPERIENCIA</text>
+  <text x="500" y="88" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#94A3B8">Camino Monte Sosa 6610, Las Piedras • A 25 min de Montevideo • Capacidad: 250 personas</text>
+  
+  <g transform="translate(60, 130)">
+    <rect width="260" height="180" rx="16" fill="#111A30" stroke="#CFA24B" stroke-width="1.5" stroke-opacity="0.4"/>
+    <text x="130" y="35" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#FFFFFF">Salón Principal</text>
+    <text x="130" y="60" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#E8C96A">Capacidad: 250 personas</text>
+    <text x="20" y="95" font-family="sans-serif" font-size="11" fill="#94A3B8">• Climatización integral F/C</text>
+    <text x="20" y="118" font-family="sans-serif" font-size="11" fill="#94A3B8">• Pista de baile con robótica</text>
+    <text x="20" y="141" font-family="sans-serif" font-size="11" fill="#94A3B8">• Suite nupcial privada</text>
+    <text x="20" y="164" font-family="sans-serif" font-size="11" fill="#94A3B8">• Sonido array &amp; DJ residente</text>
+  </g>
+
+  <g transform="translate(370, 130)">
+    <rect width="260" height="180" rx="16" fill="#111A30" stroke="#CFA24B" stroke-width="1.5" stroke-opacity="0.4"/>
+    <text x="130" y="35" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#FFFFFF">Salón El Horno</text>
+    <text x="130" y="60" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#E8C96A">Capacidad: 90 personas</text>
+    <text x="20" y="95" font-family="sans-serif" font-size="11" fill="#94A3B8">• Parrillero criollo techado</text>
+    <text x="20" y="118" font-family="sans-serif" font-size="11" fill="#94A3B8">• Horno a leña tradicional</text>
+    <text x="20" y="141" font-family="sans-serif" font-size="11" fill="#94A3B8">• Asados criollos &amp; catering</text>
+    <text x="20" y="164" font-family="sans-serif" font-size="11" fill="#94A3B8">• Galería techada al parque</text>
+  </g>
+
+  <g transform="translate(680, 130)">
+    <rect width="260" height="180" rx="16" fill="#111A30" stroke="#CFA24B" stroke-width="1.5" stroke-opacity="0.4"/>
+    <text x="130" y="35" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#FFFFFF">Granero &amp; Parque</text>
+    <text x="130" y="60" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#E8C96A">Espacios Verdes</text>
+    <text x="20" y="95" font-family="sans-serif" font-size="11" fill="#94A3B8">• Altar para ceremonias civiles</text>
+    <text x="20" y="118" font-family="sans-serif" font-size="11" fill="#94A3B8">• Escenario rústico de fotos</text>
+    <text x="20" y="141" font-family="sans-serif" font-size="11" fill="#94A3B8">• Luces vintage nocturnas</text>
+    <text x="20" y="164" font-family="sans-serif" font-size="11" fill="#94A3B8">• Cancha deportiva &amp; recreación</text>
+  </g>
+
+  <g transform="translate(60, 345)">
+    <rect width="880" height="135" rx="16" fill="#0C1222" stroke="#334155" stroke-width="1"/>
+    <text x="440" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#F7E7A9">PILARES ALL INCLUSIVE DE CHACRA DON ANDRÉS</text>
+    
+    <g transform="translate(40, 50)">
+      <circle cx="20" cy="20" r="18" fill="#1E293B" stroke="#CFA24B"/>
+      <text x="20" y="25" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#E8C96A">🍽️</text>
+      <text x="50" y="18" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Gastronomía Propia</text>
+      <text x="50" y="34" font-family="sans-serif" font-size="10" fill="#94A3B8">Gala, criollo y celiacos</text>
+    </g>
+
+    <g transform="translate(245, 50)">
+      <circle cx="20" cy="20" r="18" fill="#1E293B" stroke="#CFA24B"/>
+      <text x="20" y="25" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#E8C96A">🎧</text>
+      <text x="50" y="18" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Sonido &amp; Robótica</text>
+      <text x="50" y="34" font-family="sans-serif" font-size="10" fill="#94A3B8">DJ y láser sincronizado</text>
+    </g>
+
+    <g transform="translate(460, 50)">
+      <circle cx="20" cy="20" r="18" fill="#1E293B" stroke="#CFA24B"/>
+      <text x="20" y="25" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#E8C96A">⚡</text>
+      <text x="50" y="18" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Grupo Electrógeno</text>
+      <text x="50" y="34" font-family="sans-serif" font-size="10" fill="#94A3B8">100% de respaldo eléctrico</text>
+    </g>
+
+    <g transform="translate(680, 50)">
+      <circle cx="20" cy="20" r="18" fill="#1E293B" stroke="#CFA24B"/>
+      <text x="20" y="25" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#E8C96A">🛡️</text>
+      <text x="50" y="18" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Seguridad &amp; Parking</text>
+      <text x="50" y="34" font-family="sans-serif" font-size="10" fill="#94A3B8">Vigilancia y 80+ autos</text>
+    </g>
+  </g>
+
+  <g transform="translate(60, 510)">
+    <rect width="880" height="60" rx="12" fill="#070B14" stroke="#CFA24B" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="440" y="35" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#E2E8F0">
+      WhatsApp Directo de Ventas: <tspan fill="#34D399" font-weight="bold">092 504 871 (Karen)</tspan> • Tour 360° Activo en la Web
+    </text>
+  </g>
+</svg>

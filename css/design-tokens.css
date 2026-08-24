@@ -1,0 +1,39 @@
+/* Design Tokens - Chacra Don Andres */
+:root {
+  --color-gold-300: #F7E7A9;
+  --color-gold-400: #E8C96A;
+  --color-gold-500: #CFA24B;
+  --color-gold-600: #B28432;
+  --color-gold-700: #8A6120;
+  
+  --color-emerald-400: #34D399;
+  --color-emerald-500: #10B981;
+  --color-emerald-600: #059669;
+  --color-emerald-800: #1B4D3E;
+  
+  --color-slate-950: #070B14;
+  --color-slate-900: #0C1222;
+  --color-slate-850: #111A30;
+  --color-slate-800: #1E293B;
+  --color-slate-700: #334155;
+  --color-slate-400: #94A3B8;
+  --color-slate-200: #E2E8F0;
+  --color-white: #FFFFFF;
+
+  --gradient-gold: linear-gradient(135deg, #F7E7A9 0%, #CFA24B 50%, #8A6120 100%);
+  --gradient-gold-shimmer: linear-gradient(90deg, #CFA24B 0%, #F7E7A9 25%, #CFA24B 50%, #8A6120 75%, #CFA24B 100%);
+  --gradient-dark-card: linear-gradient(180deg, rgba(17, 26, 48, 0.75) 0%, rgba(12, 18, 34, 0.95) 100%);
+  --gradient-hero-overlay: linear-gradient(180deg, rgba(7, 11, 20, 0.75) 0%, rgba(7, 11, 20, 0.55) 50%, #070B14 100%);
+  
+  --glass-bg: rgba(12, 18, 34, 0.85);
+  --glass-border: rgba(232, 201, 106, 0.15);
+  --glass-border-hover: rgba(232, 201, 106, 0.45);
+  --glass-blur: blur(16px);
+  --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease-in-out;
+}
