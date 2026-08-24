@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <" rel="stylesheet" />
+  
   
   <link rel="stylesheet" href="css/design-tokens.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -233,7 +233,7 @@
         <p class="text-sm font-light text-brand-text/70">Diseñemos juntos su propuesta a medida.</p>
       </div>
 
-      <form id="quoteForm" class="space-y-8 bg-brand-bg p-8 md:p-12 border border-brand-border">
+      <form id="quoteForm" onsubmit="QuoteCalculator.handleFormSubmit(event)" class="space-y-8 bg-brand-bg p-8 md:p-12 border border-brand-border">
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>

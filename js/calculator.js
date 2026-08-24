@@ -46,14 +46,37 @@ Quisiera consultar disponibilidad y presupuesto para:
 
   handleFormSubmit(e) {
     e.preventDefault();
-    const name = document.getElementById("qName").value;
-    const eventType = document.getElementById("qEventType").value;
-    const date = document.getElementById("qDate").value;
-    const guests = document.getElementById("qGuests").value;
-    const shift = document.getElementById("qShift") ? document.getElementById("qShift").value : "Nocturno";
-    const notes = document.getElementById("qNotes") ? document.getElementById("qNotes").value : "";
+    const name = document.getElementById("calcName") ? document.getElementById("calcName").value : "";
+    const eventType = document.getElementById("calcType") ? document.getElementById("calcType").value : "";
+    const date = document.getElementById("calcDate") ? document.getElementById("calcDate").value : "";
+    const guests = document.getElementById("calcGuests") ? document.getElementById("calcGuests").value : "";
+    const notes = document.getElementById("calcDetails") ? document.getElementById("calcDetails").value : "";
 
-    const waUrl = this.buildWhatsAppUrl({ name, eventType, date, guests, shift, notes });
-    window.open(waUrl, "_blank", "noopener,noreferrer");
+    const waUrl = this.buildWhatsAppUrl({ name, eventType, date, guests, shift: "A coordinar", notes });
+    
+    // UX Pro Max: Form Submit Feedback
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Procesando...';
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-70');
+      
+      setTimeout(() => {
+        submitBtn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Propuesta Enviada';
+        submitBtn.classList.add('bg-brand-green', 'text-brand-bg', 'border-brand-green');
+        window.open(waUrl, "_blank", "noopener,noreferrer");
+        
+        // Reset after 3 seconds
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-70', 'bg-brand-green', 'text-brand-bg', 'border-brand-green');
+          e.target.reset();
+        }, 3000);
+      }, 800);
+    } else {
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+    }
   }
 };
