@@ -12,7 +12,7 @@ const ChacraData = {
     location: "Las Piedras / Montevideo Rural",
     email: "Contacto@chacradonandres.com.uy",
     instagram: "@chacradonandres",
-    tourEmbedBase: "https://casas.virtualprop360.uy/tours/avNLpjngi",
+    tourEmbedBase: "https://gc.360-data.com/tours/avNLpjngi",
     tourThumbnailBase: "https://gc.360-data.com/tours/avNLpjngi/"
   },
   
