@@ -12,15 +12,15 @@ const TourController = {
   },
 
   renderSceneButtons() {
-    const container = document.getElementById("sceneButtonsContainer");
+    const container = document.getElementById("sceneList");
     if (!container) return;
 
     container.innerHTML = ChacraData.tourScenes.map(scene => `
       <button 
         onclick="TourController.switchScene('${scene.id}', this)"
-        class="scene-btn ${scene.id === this.currentSceneId ? 'active' : ''} px-3 py-2 rounded-xl border border-white/10 text-xs font-semibold text-slate-300 hover:text-yellow-400 hover:border-yellow-500/40 transition flex items-center gap-1.5"
+        class="scene-btn ${scene.id === this.currentSceneId ? \'text-brand-text border-brand-text bg-brand-secondary\' : \'text-brand-text/50 border-brand-border hover:text-brand-text hover:border-brand-text\'} px-4 py-3 text-[10px] uppercase tracking-[0.15em] border transition-all flex flex-col md:flex-row items-center gap-2 min-w-max text-left"
         title="${scene.desc}">
-        <i class="fa-solid ${scene.icon} text-yellow-500 text-[11px]"></i>
+        
         <span>${scene.name}</span>
       </button>
     `).join("");
