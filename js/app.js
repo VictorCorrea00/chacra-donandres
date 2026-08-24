@@ -5,15 +5,22 @@ const AppController = {
   init() {
     this.setupNavbarBehavior();
     this.setupMobileMenu();
+
+    // Iniciar Micro-interacciones Premium
+    this.initPreloader();
+    this.initCustomCursor();
+    this.initMagneticButtons();
+    this.initParallax();
+
     this.renderTestimonials();
 
     if (window.gsap && window.ScrollTrigger) {
-      gsap.registerPlugin(ScrollTrigger);
+      if (window.TourController) TourController.init();
+    if (window.GalleryController) GalleryController.init();
+
+    gsap.registerPlugin(ScrollTrigger);
       this.initGsapAnimations();
     }
-
-    if (window.TourController) TourController.init();
-    if (window.GalleryController) GalleryController.init();
     if (window.WeatherWidget) WeatherWidget.init();
   },
 
@@ -31,6 +38,79 @@ const AppController = {
           toggleActions: 'play none none reverse' 
         } 
       });
+    });
+  },
+
+  
+  initPreloader() {
+    const tl = gsap.timeline();
+    tl.to("#preloader-text", { y: 0, duration: 1, ease: "power4.out", delay: 0.2 })
+      .to("#preloader-text", { y: "-100%", duration: 0.8, ease: "power4.in", delay: 0.5 })
+      .to("#premium-preloader", { y: "-100%", duration: 1, ease: "expo.inOut" }, "-=0.3")
+      .call(() => this.animateHeroText());
+  },
+
+  animateHeroText() {
+    const heroText = document.querySelector('.split-text-hero');
+    if(heroText) {
+      const chars = heroText.innerText.split('').map(c => `<span class="char">${c === ' ' ? '&nbsp;' : c}</span>`).join('');
+      heroText.innerHTML = chars;
+      gsap.to('.split-text-hero .char', {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        stagger: 0.05,
+        ease: "power4.out"
+      });
+    }
+  },
+
+  initCustomCursor() {
+    const cursor = document.getElementById('custom-cursor');
+    const follower = document.getElementById('cursor-follower');
+    if(!cursor || !follower) return;
+
+    window.addEventListener('mousemove', (e) => {
+      gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+      gsap.to(follower, { x: e.clientX, y: e.clientY, duration: 0.3 });
+    });
+
+    document.querySelectorAll('a, button, .magnetic-btn, .group').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('hovered');
+        follower.classList.add('hovered');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hovered');
+        follower.classList.remove('hovered');
+      });
+    });
+  },
+
+  initMagneticButtons() {
+    document.querySelectorAll('.magnetic-btn').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.4;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.4;
+        gsap.to(btn, { x: x, y: y, duration: 0.3 });
+      });
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1, 0.3)" });
+      });
+    });
+  },
+
+  initParallax() {
+    gsap.to('.parallax-img', {
+      yPercent: 15,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      }
     });
   },
 

@@ -43,7 +43,19 @@
     .gretna-hover:hover { color: #8C6A5D; }
   </style>
 </head>
-<body class="bg-brand-bg text-brand-text font-sans overflow-x-hidden flex flex-col lg:flex-row w-full">
+<body class="cursor-none bg-brand-bg text-brand-text font-sans overflow-x-hidden flex flex-col lg:flex-row w-full">
+
+  <!-- Premium Preloader -->
+  <div id="premium-preloader" class="fixed inset-0 z-[9999] bg-brand-bg flex items-center justify-center transition-transform duration-1000">
+    <div class="overflow-hidden">
+      <h1 id="preloader-text" class="font-serif text-4xl tracking-[0.2em] text-brand-text translate-y-full">DON ANDRÉS</h1>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="custom-cursor" class="fixed top-0 left-0 w-4 h-4 bg-brand-text rounded-full pointer-events-none z-[10000] mix-blend-difference transition-transform duration-150 ease-out hidden lg:block" style="transform: translate(-50%, -50%);"></div>
+  <div id="cursor-follower" class="fixed top-0 left-0 w-12 h-12 border border-brand-text rounded-full pointer-events-none z-[9999] transition-all duration-300 ease-out hidden lg:block" style="transform: translate(-50%, -50%);"></div>
+
 
   <!-- Mobile Topbar -->
   <header class="lg:hidden fixed w-full top-0 z-50 bg-white border-b border-brand-border flex justify-between items-center p-6">
@@ -89,11 +101,11 @@
      
      <!-- 1. HERO (Image + Center text) -->
      <section id="hero" class="relative w-full h-[90vh] lg:h-screen bg-slate-950 flex items-center justify-center fade-up-slow">
-        <img src="assets/img/boda.jpg" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.5] contrast-125" />
+        <img src="assets/img/boda.jpg" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.5] contrast-125 parallax-img scale-110" />
         <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-6">
-           <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal tracking-wide mb-6 drop-shadow-lg">El Mejor Entorno</h2>
+           <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal tracking-wide mb-6 drop-shadow-lg split-text-hero overflow-hidden block">El Mejor Entorno</h2>
            <p class="text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-light mb-12 max-w-lg mx-auto opacity-80">Bodas, 15 Años y Eventos Infantiles en Las Piedras</p>
-           <a href="#tour360" class="bg-white/5 backdrop-blur-md border border-white/40 text-white px-10 py-4 text-[9px] uppercase tracking-[0.25em] font-bold hover:bg-white hover:text-black transition-all">Explorar Espacios</a>
+           <a href="#tour360" class="magnetic-btn bg-white/5 backdrop-blur-md border border-white/40 text-white px-10 py-4 text-[9px] uppercase tracking-[0.25em] font-bold hover:bg-white hover:text-black transition-all">Explorar Espacios</a>
         </div>
      </section>
 
@@ -132,21 +144,21 @@
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
            <div class="group">
-             <div class="overflow-hidden mb-6 aspect-[4/3]">
+             <div class="relative overflow-hidden mb-6 aspect-[4/3]">
                <img src="assets/img/salon-principal.jpg" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
              </div>
              <h4 class="font-serif text-2xl mb-3 text-brand-text">Salón Principal</h4>
              <p class="text-[9px] uppercase tracking-[0.2em] gretna-accent font-bold">Climatizado · +150 Inv</p>
            </div>
            <div class="group">
-             <div class="overflow-hidden mb-6 aspect-[4/3]">
+             <div class="relative overflow-hidden mb-6 aspect-[4/3]">
                <img src="assets/img/salon-horno.jpg" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
              </div>
              <h4 class="font-serif text-2xl mb-3 text-brand-text">El Horno</h4>
              <p class="text-[9px] uppercase tracking-[0.2em] gretna-accent font-bold">Rústico · Parrillero</p>
            </div>
            <div class="group">
-             <div class="overflow-hidden mb-6 aspect-[4/3]">
+             <div class="relative overflow-hidden mb-6 aspect-[4/3]">
                <img src="assets/img/parque.jpg" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" />
              </div>
              <h4 class="font-serif text-2xl mb-3 text-brand-text">Parque y Piscina</h4>

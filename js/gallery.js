@@ -46,7 +46,7 @@ const GalleryController = {
       <div 
         class="relative group cursor-pointer mb-6 break-inside-avoid border border-brand-border fade-up-slow"
         onclick="GalleryController.openLightbox('${item.img}')">
-        <img src="${item.img}" alt="${item.title}" class="w-full h-auto object-cover transition duration-700 group-hover:opacity-90" loading="lazy" />
+        <img src="${item.img}" alt="${item.title}" class="w-full h-auto object-cover transition duration-700 group-hover:opacity-90"  />
         <div class="absolute inset-0 bg-brand-bg/10 group-hover:bg-transparent transition duration-700"></div>
         
         <div class="absolute bottom-0 inset-x-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-black/80 to-transparent">
