@@ -74,13 +74,7 @@
 
 
   <!-- Mobile Topbar -->
-  <header class="lg:hidden fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#C9A96E]/20 flex justify-between items-center px-6 py-4">
-     <div>
-       <p class="text-[8px] uppercase tracking-[0.4em] text-[#C9A96E] font-bold">Chacra</p>
-       <span class="font-serif text-2xl text-[#1C201E] tracking-wider">Don Andrés</span>
-     </div>
-     <button id="menuToggle" class="text-[#1C201E] text-2xl"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-  </header>
+  
 
   <!-- Mobile Menu Drawer -->
   <div id="mobileMenu" class="lg:hidden fixed inset-0 z-40 bg-white flex flex-col justify-start items-center gap-8 pt-28 pb-12 overflow-y-auto" style="transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);">
@@ -96,38 +90,44 @@
   </div>
 
   <!-- Desktop Sidebar -->
-  <aside class="hidden lg:flex fixed left-0 top-0 w-64 h-screen bg-white flex-col items-center py-14 px-8 z-50 border-r border-[#C9A96E]/15">
-  <a href="#hero" class="text-center mb-16 group block">
-    <p class="text-[9px] uppercase tracking-[0.5em] text-[#C9A96E] font-bold mb-2">Chacra &amp; Eventos</p>
-    <h1 class="font-serif text-3xl text-[#1C201E] tracking-wider leading-tight">Don<br/>Andrés</h1>
-    <div class="mt-3 w-8 h-[1px] bg-[#C9A96E]/50 mx-auto group-hover:w-16 transition-all duration-500"></div>
-  </a>
-  <nav class="flex flex-col gap-6 w-full text-left">
-    <a href="#hero"        class="sidebar-link text-[11px] uppercase tracking-[0.2em] text-[#1C201E]/60 hover:text-[#C9A96E] transition-colors flex items-center gap-3 group"><span class="w-0 h-[1px] bg-[#C9A96E] group-hover:w-6 transition-all duration-300"></span>Inicio</a>
-    <a href="#salones"     class="sidebar-link text-[11px] uppercase tracking-[0.2em] text-[#1C201E]/60 hover:text-[#C9A96E] transition-colors flex items-center gap-3 group"><span class="w-0 h-[1px] bg-[#C9A96E] group-hover:w-6 transition-all duration-300"></span>Salones</a>
-    <a href="#granja"      class="sidebar-link text-[11px] uppercase tracking-[0.2em] text-[#1C201E]/60 hover:text-[#C9A96E] transition-colors flex items-center gap-3 group"><span class="w-0 h-[1px] bg-[#C9A96E] group-hover:w-6 transition-all duration-300"></span>Granja</a>
-    <a href="#actividades" class="sidebar-link text-[11px] uppercase tracking-[0.2em] text-[#1C201E]/60 hover:text-[#C9A96E] transition-colors flex items-center gap-3 group"><span class="w-0 h-[1px] bg-[#C9A96E] group-hover:w-6 transition-all duration-300"></span>Actividades</a>
-    <a href="#tour360"     class="sidebar-link text-[11px] uppercase tracking-[0.2em] text-[#1C201E]/60 hover:text-[#C9A96E] transition-colors flex items-center gap-3 group"><span class="w-0 h-[1px] bg-[#C9A96E] group-hover:w-6 transition-all duration-300"></span>Tour 360</a>
-    <a href="#cotizador"   class="sidebar-link text-[11px] uppercase tracking-[0.2em] text-[#1C201E]/60 hover:text-[#C9A96E] transition-colors flex items-center gap-3 group"><span class="w-0 h-[1px] bg-[#C9A96E] group-hover:w-6 transition-all duration-300"></span>Contacto</a>
-  </nav>
-  <div class="mt-auto w-full">
-    <a href="https://wa.me/59892504871" target="_blank" class="flex items-center justify-center gap-3 bg-[#C9A96E] text-[#1C201E] text-[10px] uppercase tracking-widest font-bold px-4 py-4 hover:bg-[#F5F0E8] transition-colors w-full">
-      <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> Consultar
-    </a>
-    <div class="flex justify-center gap-5 mt-4">
-      <a href="https://instagram.com/chacradonandres" target="_blank" class="text-[#1C201E]/30 hover:text-[#C9A96E] transition-colors"><i class="fa-brands fa-instagram text-xl" aria-hidden="true"></i></a>
-    </div>
-  </div>
-</aside>
+  
 
   <!-- Main Content Area -->
-  <main class="w-full lg:ml-64 lg:w-[calc(100%-16rem)] bg-white">
+  
+  <!-- Top Navbar -->
+  <nav class="absolute top-0 w-full z-50 flex justify-between items-center px-8 lg:px-16 py-6 text-[#F3EFE0]">
+    <div class="flex items-center gap-3">
+      <i class="fa-solid fa-tree text-2xl text-[#F3EFE0]"></i>
+      <div class="leading-tight">
+        <span class="block text-sm font-serif">Chacra</span>
+        <span class="block text-lg font-serif">Don Andrés</span>
+      </div>
+    </div>
+    
+    <div class="hidden lg:flex items-center gap-8 text-sm font-medium">
+      <a href="#hero" class="hover:text-[#D48C46] transition-colors">Inicio</a>
+      <a href="#salones" class="hover:text-[#D48C46] transition-colors">Salones</a>
+      <a href="#granja" class="hover:text-[#D48C46] transition-colors">Granja</a>
+      <a href="#actividades" class="hover:text-[#D48C46] transition-colors">Actividades</a>
+      <a href="#tour360" class="hover:text-[#D48C46] transition-colors">Tour 360</a>
+      <a href="#cotizador" class="hover:text-[#D48C46] transition-colors">Contacto</a>
+    </div>
+
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="#cotizador" class="border border-[#F3EFE0]/50 px-6 py-2 rounded-lg text-sm hover:bg-[#F3EFE0] hover:text-[#1F2C1F] transition-all">Consultar</a>
+      <a href="#actividades" class="bg-[#D48C46] text-[#1F2C1F] px-6 py-2 rounded-lg text-sm font-bold hover:brightness-110 transition-all">Ver actividades</a>
+    </div>
+    
+    <button class="lg:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+<main class="w-full bg-white">
 
      <!-- 1. HERO (Editorial Asimétrico) -->
      <section id="hero" class="relative w-full h-screen bg-[#1F2C1F] overflow-hidden flex-shrink-0">
     <!-- Left Background Image (Farm) -->
     <div class="absolute inset-0 w-[60%] h-full z-0">
-        <img src="assets/img/juegos.webp" class="w-full h-full object-cover origin-left" alt="Chacra al aire libre">
+        <img src="assets/img/parque.webp" class="w-full h-full object-cover origin-left" alt="Chacra al aire libre">
         <div class="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
     </div>
     
@@ -153,8 +153,8 @@
     </div>
 
     <!-- Text Content -->
-    <div class="absolute inset-0 z-30 flex items-center justify-center lg:justify-end pointer-events-none px-6 lg:px-24">
-        <div class="w-full lg:w-[60%] flex flex-col items-center lg:items-center text-center pointer-events-auto">
+    <div class="absolute inset-0 z-40 flex items-center justify-center justify-center pointer-events-none px-6">
+        <div class="w-full flex flex-col items-center text-center pointer-events-auto z-40">
             <h1 class="font-serif text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1.05] text-[#F3EFE0] mb-6 drop-shadow-lg fade-up-slow">
                 Naturaleza, juego<br>y vida al aire libre
             </h1>
