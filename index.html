@@ -124,44 +124,72 @@
   <main class="w-full lg:ml-64 lg:w-[calc(100%-16rem)] bg-white">
 
      <!-- 1. HERO (Editorial Asimétrico) -->
-     <section id="hero" class="relative w-full h-screen bg-white flex items-end justify-start overflow-hidden">
-        <!-- Slider Background -->
-        <div id="hero-slider" class="absolute inset-0 w-full h-full overflow-hidden">
-           <div class="hero-slide absolute inset-0 w-full h-full z-0">
-              <img src="assets/img/boda.webp" alt="Boda al aire libre" fetchpriority="high" loading="eager" decoding="async" class="w-full h-full object-cover origin-center" />
-           </div>
-           <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
-              <img src="assets/img/salon-principal.webp" alt="Salón Principal" loading="lazy" decoding="async" class="w-full h-full object-cover origin-center" />
-           </div>
-           <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
-              <img src="assets/img/patio.webp" alt="Patio Histórico" loading="lazy" decoding="async" class="w-full h-full object-cover origin-center" />
-           </div>
-        </div>
-        <!-- Gradient overlay -->
-        <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-        <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/60 via-transparent to-transparent"></div>
+     <section id="hero" class="relative w-full h-screen bg-[#1F2C1F] overflow-hidden flex-shrink-0">
+    <!-- Left Background Image (Farm) -->
+    <div class="absolute inset-0 w-[60%] h-full z-0">
+        <img src="assets/img/juegos.webp" class="w-full h-full object-cover origin-left" alt="Chacra al aire libre">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
+    </div>
+    
+    <!-- Diagonal Overlay -->
+    <div class="absolute inset-0 z-10 bg-[#1F2C1F] shadow-2xl" style="clip-path: polygon(55% 0, 100% 0, 100% 100%, 30% 100%);"></div>
 
-        <!-- Content -->
-        <div id="hero-content" class="relative z-20 px-8 lg:px-24 pb-24 lg:pb-32 opacity-0 w-full">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-[1px] bg-[#C9A96E]"></div>
-            <span class="text-[9px] uppercase tracking-[0.4em] text-[#C9A96E] font-bold">Las Piedras, Uruguay</span>
-          </div>
-          <!-- Clip-text headline -->
-          <h2 class="hero-title font-serif text-[4rem] md:text-[6rem] lg:text-[9rem] leading-[0.85] font-normal tracking-tight mb-8">
-            <span style="color: #F5F0E8;">Don</span><br/><span class="italic" style="color: #C9A96E;">Andrés</span>
-          </h2>
-          <p class="text-[#1C201E]/60 text-[11px] uppercase tracking-[0.4em] max-w-md mb-10">Bodas · 15 Años · Fiestas Infantiles · Grupos</p>
-          <div class="flex flex-wrap gap-4 items-center">
-            <a href="#salones" class="group relative overflow-hidden border border-[#C9A96E] text-[#C9A96E] px-10 py-4 text-[10px] uppercase tracking-[0.25em] font-bold transition-all duration-500 hover:text-[#1C201E]">
-              <span class="relative z-10">Ver Espacios</span>
-              <div class="absolute inset-0 bg-[#C9A96E] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 z-0"></div>
-            </a>
-            <a href="#tour360" class="text-[#1C201E]/50 text-[10px] uppercase tracking-[0.25em] font-bold hover:text-[#C9A96E] transition-colors">Tour Virtual 360 →</a>
-          </div>
+    <!-- Right Side Images Grid -->
+    <div class="absolute top-1/2 right-[-25%] lg:right-[-15%] -translate-y-1/2 w-[80%] lg:w-[60%] h-[160%] z-20 flex flex-col gap-4 transform -rotate-12 pointer-events-none opacity-90 scale-75 lg:scale-100 origin-center">
+        <div class="flex gap-4 translate-x-12">
+            <img src="assets/img/LLAMA01.webp" class="w-48 lg:w-56 h-64 lg:h-72 object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-[#1F2C1F]/40">
+            <img src="assets/img/OVEJA02.webp" class="w-56 lg:w-64 h-48 lg:h-56 object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-[#1F2C1F]/40">
+            <img src="assets/img/patio.webp" class="w-40 lg:w-48 h-56 lg:h-64 object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-[#1F2C1F]/40">
         </div>
+        <div class="flex gap-4 -translate-x-16 lg:-translate-x-24">
+            <img src="assets/img/piscina-Don-Andres.webp" class="w-64 lg:w-72 h-56 lg:h-64 object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-[#1F2C1F]/40">
+            <img src="assets/img/salon-principal.webp" class="w-48 lg:w-56 h-72 lg:h-80 object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-[#1F2C1F]/40">
+            <img src="assets/img/PAVO.webp" class="w-56 lg:w-64 h-56 lg:h-64 object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-[#1F2C1F]/40">
+        </div>
+        <div class="flex gap-4 translate-x-8 lg:translate-x-16">
+            <img src="assets/img/carreta30.webp" class="w-56 lg:w-64 h-48 lg:h-56 object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-[#1F2C1F]/40">
+            <img src="assets/img/boda.webp" class="w-64 lg:w-72 h-64 lg:h-72 object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-[#1F2C1F]/40">
+        </div>
+    </div>
 
-      </section>
+    <!-- Text Content -->
+    <div class="absolute inset-0 z-30 flex items-center justify-center lg:justify-end pointer-events-none px-6 lg:px-24">
+        <div class="w-full lg:w-[60%] flex flex-col items-center lg:items-center text-center pointer-events-auto">
+            <h1 class="font-serif text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1.05] text-[#F3EFE0] mb-6 drop-shadow-lg fade-up-slow">
+                Naturaleza, juego<br>y vida al aire libre
+            </h1>
+            <p class="text-[#D48C46] text-xs md:text-sm uppercase tracking-[0.3em] font-bold mb-10 fade-up-slow" style="animation-delay: 0.2s;">
+                Cerca de Montevideo
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 items-center fade-up-slow" style="animation-delay: 0.4s;">
+                <a href="#cotizador" class="bg-[#D48C46] text-[#1F2C1F] px-10 py-4 rounded-xl text-sm font-bold transition-transform hover:scale-105 hover:shadow-lg">
+                    Reservá tu visita
+                </a>
+                <a href="#actividades" class="text-[#F3EFE0] px-8 py-4 text-sm font-bold border-b border-[#F3EFE0]/30 hover:border-[#F3EFE0] transition-colors">
+                    Ver actividades
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Left Google Rating -->
+    <div class="absolute bottom-6 left-6 lg:bottom-10 lg:left-10 z-30 flex items-center gap-2 text-[#F3EFE0] text-sm fade-up-slow">
+        <span class="font-bold">4.6</span>
+        <span class="text-[#D48C46]">★</span>
+        <span class="opacity-80">· 292 opiniones en Google</span>
+    </div>
+
+    <!-- Bottom Center Features Pill (Hidden on very small screens, visible md+) -->
+    <div class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-auto lg:right-[30%] z-30 bg-[#F3EFE0] text-[#1F2C1F] px-6 lg:px-8 py-3 rounded-full items-center gap-4 lg:gap-6 shadow-2xl text-[10px] lg:text-xs font-bold uppercase tracking-wider fade-up-slow">
+        <div class="flex items-center gap-2"><span class="text-[#4CAF50] text-lg">🍃</span> Animales</div>
+        <div class="w-1 h-1 rounded-full bg-black/20"></div>
+        <div class="flex items-center gap-2"><span class="text-[#03A9F4] text-lg">🏊</span> Piscina</div>
+        <div class="w-1 h-1 rounded-full bg-black/20"></div>
+        <div class="flex items-center gap-2"><span class="text-[#E91E63] text-lg">🎪</span> Eventos</div>
+        <div class="w-1 h-1 rounded-full bg-black/20"></div>
+        <div class="flex items-center gap-2"><span class="text-[#FF9800] text-lg">🏫</span> Escolares</div>
+    </div>
+</section>
 
      <!-- 2. ATRACTIVOS (Grid asimétrico con FOTOS REALES) -->
      
