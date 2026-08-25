@@ -24,8 +24,8 @@ const TourController = {
           class="group flex items-center gap-6 w-full text-left py-4 border-b border-[#C9A96E]/10 transition-all duration-500 relative overflow-hidden"
           title="${scene.desc}">
           
-          <span class="text-[9px] font-bold ${isActive ? 'text-[#C9A96E]' : 'text-[#F5F0E8]/30'} transition-colors w-6">${num}</span>
-          <span class="font-serif text-lg ${isActive ? 'text-[#F5F0E8]' : 'text-[#F5F0E8]/50'} group-hover:text-[#F5F0E8] transition-colors relative z-10">${scene.name}</span>
+          <span class="text-[9px] font-bold ${isActive ? 'text-[#C9A96E]' : 'text-[#1C201E]/30'} transition-colors w-6">${num}</span>
+          <span class="font-serif text-lg ${isActive ? 'text-[#1C201E]' : 'text-[#1C201E]/50'} group-hover:text-[#1C201E] transition-colors relative z-10">${scene.name}</span>
           
           ${isActive ? '<div class="ml-auto w-2 h-2 rounded-full bg-[#C9A96E] animate-pulse"></div>' : ''}
           

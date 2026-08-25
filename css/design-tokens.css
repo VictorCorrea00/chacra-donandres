@@ -1,9 +1,9 @@
 
 :root {
   /* Colors - Editorial Luxury */
-  --bg-primary: #1A110B;
-  --bg-secondary: #2B1C13;
-  --text-primary: #F5F0E8;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FDFCF0;
+  --text-primary: #1C201E;
   --text-secondary: rgba(245,240,232,0.6);
   
   --accent-gold: #A88E6D;
